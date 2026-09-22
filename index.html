@@ -6,349 +6,349 @@
 <title>Bloom - Menstrual Cycle Tracker</title>
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial, sans-serif;
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Arial, sans-serif;
 }
 body{
-    background:#faf6fa;
-    color:#443b45;
-    padding-bottom:90px;
+background:#faf6fa;
+color:#443b45;
+padding-bottom:90px;
 }
 /* HEADER */
 header{
-    background:linear-gradient(135deg,#dcefd5,#f6d8e8,#e5daf3);
-    padding:18px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 3px 15px #00000012;
-    position:sticky;
-    top:0;
-    z-index:50;
+background:linear-gradient(135deg,#dcefd5,#f6d8e8,#e5daf3);
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 15px #00000012;
+position:sticky;
+top:0;
+z-index:50;
 }
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#73556f;
+font-size:25px;
+font-weight:bold;
+color:#73556f;
 }
 .header-buttons button{
-    border:0;
-    background:white;
-    width:42px;
-    height:42px;
-    border-radius:50%;
-    margin-left:7px;
-    cursor:pointer;
-    font-size:18px;
+border:0;
+background:white;
+width:42px;
+height:42px;
+border-radius:50%;
+margin-left:7px;
+cursor:pointer;
+font-size:18px;
 }
 /* CONTAINER */
 .container{
-    max-width:1100px;
-    margin:auto;
-    padding:28px 20px;
+max-width:1100px;
+margin:auto;
+padding:28px 20px;
 }
 .page{
-    display:none;
+display:none;
 }
 .page.active{
-    display:block;
+display:block;
 }
 h1{
-    color:#674f64;
-    margin-bottom:7px;
+color:#674f64;
+margin-bottom:7px;
 }
 .subtitle{
-    color:#8a7d88;
-    margin-bottom:22px;
+color:#8a7d88;
+margin-bottom:22px;
 }
 /* CARDS */
 .card{
-    background:white;
-    border-radius:25px;
-    padding:23px;
-    margin-bottom:20px;
-    box-shadow:0 6px 25px #74516d10;
+background:white;
+border-radius:25px;
+padding:23px;
+margin-bottom:20px;
+box-shadow:0 6px 25px #74516d10;
 }
 .grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 .card h3{
-    color:#76566f;
-    margin-bottom:10px;
+color:#76566f;
+margin-bottom:10px;
 }
 .card p{
-    line-height:1.6;
-    color:#80747e;
+line-height:1.6;
+color:#80747e;
 }
 /* TODAY */
 .welcome{
-    margin-bottom:20px;
+margin-bottom:20px;
 }
 .status-card{
-    text-align:center;
-    background:linear-gradient(135deg,#fff1f7,#f1f8ec);
+text-align:center;
+background:linear-gradient(135deg,#fff1f7,#f1f8ec);
 }
 .status{
-    display:inline-block;
-    padding:10px 20px;
-    background:#eadcf1;
-    border-radius:30px;
-    color:#74577e;
-    font-weight:bold;
-    margin-top:12px;
+display:inline-block;
+padding:10px 20px;
+background:#eadcf1;
+border-radius:30px;
+color:#74577e;
+font-weight:bold;
+margin-top:12px;
 }
 .cycle-area{
-    background:linear-gradient(135deg,#fff4f8,#eef8ea);
-    border-radius:30px;
-    padding:30px;
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    margin-bottom:20px;
+background:linear-gradient(135deg,#fff4f8,#eef8ea);
+border-radius:30px;
+padding:30px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+margin-bottom:20px;
 }
 .circle{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    border:14px solid #e8b7d0;
-    background:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 7px 25px #00000010;
+width:200px;
+height:200px;
+border-radius:50%;
+border:14px solid #e8b7d0;
+background:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 7px 25px #00000010;
 }
 .circle strong{
-    font-size:48px;
-    color:#8b5c7d;
+font-size:48px;
+color:#8b5c7d;
 }
 .circle span{
-    color:#8a7c86;
+color:#8a7c86;
 }
 .countdowns{
-    display:flex;
-    gap:15px;
+display:flex;
+gap:15px;
 }
 .count-box{
-    background:white;
-    padding:18px;
-    border-radius:20px;
-    min-width:150px;
-    text-align:center;
+background:white;
+padding:18px;
+border-radius:20px;
+min-width:150px;
+text-align:center;
 }
 .count-box strong{
-    display:block;
-    font-size:30px;
-    color:#bd729c;
+display:block;
+font-size:30px;
+color:#bd729c;
 }
 .count-box span{
-    color:#837782;
+color:#837782;
 }
 /* BUTTONS */
 .btn{
-    border:0;
-    padding:12px 20px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
-    margin:5px 3px;
+border:0;
+padding:12px 20px;
+border-radius:25px;
+cursor:pointer;
+font-weight:bold;
+margin:5px 3px;
 }
 .primary{
-    background:#c982aa;
-    color:white;
+background:#c982aa;
+color:white;
 }
 .primary:hover{
-    background:#a96089;
+background:#a96089;
 }
 .green{
-    background:#dcefd5;
-    color:#55704d;
+background:#dcefd5;
+color:#55704d;
 }
 .purple{
-    background:#e7d9f1;
-    color:#70527d;
+background:#e7d9f1;
+color:#70527d;
 }
 .blue{
-    background:#dcebf5;
-    color:#52718b;
+background:#dcebf5;
+color:#52718b;
 }
 .red{
-    background:#ed9eae;
-    color:white;
+background:#ed9eae;
+color:white;
 }
 .grey{
-    background:#eee9ed;
-    color:#675d66;
+background:#eee9ed;
+color:#675d66;
 }
 /* INFO CARDS */
 .info-row{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-bottom:20px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
 }
 .info-box{
-    background:white;
-    padding:18px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 4px 15px #00000008;
+background:white;
+padding:18px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 4px 15px #00000008;
 }
 .info-box .icon{
-    font-size:28px;
+font-size:28px;
 }
 .info-box strong{
-    display:block;
-    color:#79566f;
-    margin:7px;
+display:block;
+color:#79566f;
+margin:7px;
 }
 /* TIP */
 .tip{
-    background:#fff3dc;
-    padding:22px;
-    border-radius:22px;
-    margin-top:20px;
+background:#fff3dc;
+padding:22px;
+border-radius:22px;
+margin-top:20px;
 }
 .tip h3{
-    color:#a27543;
-    margin-bottom:8px;
+color:#a27543;
+margin-bottom:8px;
 }
 /* CALENDAR */
 .calendar-card{
-    background:white;
-    padding:25px;
-    border-radius:25px;
-    box-shadow:0 5px 20px #0000000c;
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 5px 20px #0000000c;
 }
 .calendar-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
 }
 .calendar-top button{
-    border:0;
-    background:#eadced;
-    padding:10px 15px;
-    border-radius:20px;
-    cursor:pointer;
+border:0;
+background:#eadced;
+padding:10px 15px;
+border-radius:20px;
+cursor:pointer;
 }
 .weekdays,.days{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:7px;
-    text-align:center;
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:7px;
+text-align:center;
 }
 .weekdays div{
-    padding:10px;
-    color:#9b6d91;
-    font-weight:bold;
+padding:10px;
+color:#9b6d91;
+font-weight:bold;
 }
 .day{
-    min-height:60px;
-    border-radius:15px;
-    padding:9px;
-    cursor:pointer;
+min-height:60px;
+border-radius:15px;
+padding:9px;
+cursor:pointer;
 }
 .day:hover{
-    background:#f8e9f1;
+background:#f8e9f1;
 }
 .today{
-    background:#d8e9f7 !important;
-    border:2px solid #6c96bd;
+background:#d8e9f7 !important;
+border:2px solid #6c96bd;
 }
 .period{
-    background:#f5c6da;
+background:#f5c6da;
 }
 .fertile{
-    background:#e9def4;
+background:#e9def4;
 }
 .predicted{
-    background:#fbe4ef;
+background:#fbe4ef;
 }
 .legend{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:20px;
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:20px;
 }
 .legend span{
-    background:#f5f1f5;
-    padding:8px 12px;
-    border-radius:20px;
+background:#f5f1f5;
+padding:8px 12px;
+border-radius:20px;
 }
 /* DATE DETAIL */
 .date-detail{
-    display:none;
-    margin-top:20px;
-    background:#fff5fa;
-    border-radius:20px;
-    padding:20px;
+display:none;
+margin-top:20px;
+background:#fff5fa;
+border-radius:20px;
+padding:20px;
 }
 .date-detail.show{
-    display:block;
+display:block;
 }
 /* FORMS */
 .form-card{
-    max-width:800px;
-    margin:auto;
+max-width:800px;
+margin:auto;
 }
 .form-group{
-    margin-bottom:18px;
+margin-bottom:18px;
 }
 label{
-    display:block;
-    font-weight:bold;
-    color:#6e596a;
-    margin-bottom:8px;
+display:block;
+font-weight:bold;
+color:#6e596a;
+margin-bottom:8px;
 }
 input,select,textarea{
-    width:100%;
-    border:2px solid #eadfea;
-    border-radius:15px;
-    padding:13px;
-    font-size:15px;
-    outline:none;
+width:100%;
+border:2px solid #eadfea;
+border-radius:15px;
+padding:13px;
+font-size:15px;
+outline:none;
 }
 input:focus,select:focus,textarea:focus{
-    border-color:#c982aa;
+border-color:#c982aa;
 }
 textarea{
-    min-height:120px;
+min-height:120px;
 }
 /* CHOICES */
 .choice-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 .choice{
-    border:2px solid #eadfea;
-    background:white;
-    padding:11px 15px;
-    border-radius:22px;
-    cursor:pointer;
+border:2px solid #eadfea;
+background:white;
+padding:11px 15px;
+border-radius:22px;
+cursor:pointer;
 }
 .choice.selected{
-    background:#f2d7e5;
-    border-color:#c982aa;
-    color:#7c4f6e;
+background:#f2d7e5;
+border-color:#c982aa;
+color:#7c4f6e;
 }
 /* FERTILITY */
 .fertility-box{
-    text-align:center;
-    background:linear-gradient(135deg,#eee2f7,#f9e7ef);
+text-align:center;
+background:linear-gradient(135deg,#eee2f7,#f9e7ef);
 }
 .fertility-level{
-    display:flex;
-    height:30px;
-    border-radius:20px;
-    overflow:hidden;
-    margin:20px 0;
+display:flex;
+height:30px;
+border-radius:20px;
+overflow:hidden;
+margin:20px 0;
 }
 .level-low{width:25%;background:#dcefd5;}
 .level-medium{width:25%;background:#eee1b9;}
@@ -356,997 +356,998 @@ textarea{
 .level-peak{width:25%;background:#d8c5eb;}
 /* ARTICLES */
 .article{
-    cursor:pointer;
-    transition:.2s;
+cursor:pointer;
+transition:.2s;
 }
 .article:hover{
-    transform:translateY(-3px);
-    background:#fff5fa;
+transform:translateY(-3px);
+background:#fff5fa;
 }
 .article-icon{
-    font-size:38px;
-    margin-bottom:10px;
+font-size:38px;
+margin-bottom:10px;
 }
 .article-content{
-    display:none;
-    background:#fff5fa;
-    padding:20px;
-    border-radius:20px;
-    margin-top:15px;
-    line-height:1.8;
+display:none;
+background:#fff5fa;
+padding:20px;
+border-radius:20px;
+margin-top:15px;
+line-height:1.8;
 }
 .article-content.show{
-    display:block;
+display:block;
 }
 /* DAILY SELF-CARE TIPS */
 .daily-tip-box{
-    background:linear-gradient(135deg,#fff9e8,#fef3f8);
-    border-radius:25px;
-    padding:25px;
-    margin-bottom:20px;
+background:linear-gradient(135deg,#fff9e8,#fef3f8);
+border-radius:25px;
+padding:25px;
+margin-bottom:20px;
 }
 .tip-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-    margin-top:15px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:15px;
 }
 .tip-item{
-    background:white;
-    padding:15px;
-    border-radius:15px;
+background:white;
+padding:15px;
+border-radius:15px;
 }
 /* STATS */
 .stat-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
 }
 .stat{
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    text-align:center;
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
 }
 .stat strong{
-    display:block;
-    font-size:30px;
-    color:#bd729c;
-    margin:8px;
+display:block;
+font-size:30px;
+color:#bd729c;
+margin:8px;
 }
 .history{
-    width:100%;
-    border-collapse:collapse;
+width:100%;
+border-collapse:collapse;
 }
 .history th,.history td{
-    padding:14px;
-    border-bottom:1px solid #eee5eb;
-    text-align:left;
+padding:14px;
+border-bottom:1px solid #eee5eb;
+text-align:left;
 }
 /* NOTIFICATIONS */
 .notification{
-    padding:18px;
-    border-radius:18px;
-    background:#fff4f8;
-    margin-bottom:12px;
-    border-left:5px solid #c982aa;
+padding:18px;
+border-radius:18px;
+background:#fff4f8;
+margin-bottom:12px;
+border-left:5px solid #c982aa;
 }
 /* PROFILE */
 .profile{
-    text-align:center;
-    max-width:700px;
-    margin:auto;
+text-align:center;
+max-width:700px;
+margin:auto;
 }
 .avatar{
-    width:100px;
-    height:100px;
-    margin:auto;
-    border-radius:50%;
-    background:#f3d7e6;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:48px;
-    margin-bottom:15px;
+width:100px;
+height:100px;
+margin:auto;
+border-radius:50%;
+background:#f3d7e6;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:48px;
+margin-bottom:15px;
 }
 /* BOTTOM NAV */
 .bottom-nav{
-    position:fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    background:white;
-    box-shadow:0 -4px 20px #00000012;
-    display:flex;
-    justify-content:center;
-    z-index:100;
-    padding:9px;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:white;
+box-shadow:0 -4px 20px #00000012;
+display:flex;
+justify-content:center;
+z-index:100;
+padding:9px;
 }
 .nav{
-    border:0;
-    background:transparent;
-    cursor:pointer;
-    padding:8px 18px;
-    border-radius:18px;
-    color:#786c77;
-    font-size:13px;
+border:0;
+background:transparent;
+cursor:pointer;
+padding:8px 18px;
+border-radius:18px;
+color:#786c77;
+font-size:13px;
 }
 .nav.active{
-    background:#f3dce9;
-    color:#9a5e87;
+background:#f3dce9;
+color:#9a5e87;
 }
 /* MODAL */
 .modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:#00000055;
-    z-index:200;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+display:none;
+position:fixed;
+inset:0;
+background:#00000055;
+z-index:200;
+align-items:center;
+justify-content:center;
+padding:20px;
 }
 .modal.show{
-    display:flex;
+display:flex;
 }
 .modal-box{
-    background:white;
-    border-radius:25px;
-    padding:28px;
-    max-width:600px;
-    width:100%;
-    max-height:80vh;
-    overflow:auto;
+background:white;
+border-radius:25px;
+padding:28px;
+max-width:600px;
+width:100%;
+max-height:80vh;
+overflow:auto;
 }
 .close{
-    float:right;
-    border:0;
-    background:#eee;
-    width:35px;
-    height:35px;
-    border-radius:50%;
-    cursor:pointer;
+float:right;
+border:0;
+background:#eee;
+width:35px;
+height:35px;
+border-radius:50%;
+cursor:pointer;
 }
 /* MOBILE */
 @media(max-width:800px){
-    .grid{
-        grid-template-columns:1fr;
-    }
-    .tip-grid{
-        grid-template-columns:1fr;
-    }
-    .info-row{
-        grid-template-columns:repeat(2,1fr);
-    }
-    .stat-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-    .cycle-area{
-        flex-direction:column;
-        gap:25px;
-    }
-    .countdowns{
-        flex-direction:column;
-    }
-    .count-box{
-        min-width:220px;
-    }
-    .bottom-nav{
-        overflow-x:auto;
-        justify-content:flex-start;
-    }
-    .nav{
-        min-width:80px;
-        padding:8px 10px;
-    }
+.grid{
+grid-template-columns:1fr;
+}
+.tip-grid{
+grid-template-columns:1fr;
+}
+.info-row{
+grid-template-columns:repeat(2,1fr);
+}
+.stat-grid{
+grid-template-columns:repeat(2,1fr);
+}
+.cycle-area{
+flex-direction:column;
+gap:25px;
+}
+.countdowns{
+flex-direction:column;
+}
+.count-box{
+min-width:220px;
+}
+.bottom-nav{
+overflow-x:auto;
+justify-content:flex-start;
+}
+.nav{
+min-width:80px;
+padding:8px 10px;
+}
 }
 </style>
 </head>
 <body>
 <header>
-    <div class="logo">🌸 Bloom</div>
-    <div class="header-buttons">
-        <button onclick="openNotifications()">🔔</button>
-        <button onclick="showPage('mine')">⚙️</button>
-    </div>
+<div class="logo">🌸 Bloom</div>
+<div class="header-buttons">
+<button onclick="openNotifications()">🔔</button>
+<button onclick="showPage('mine')">⚙️</button>
+</div>
 </header>
 <div class="container">
 <!-- ================= TODAY ================= -->
 <section id="today" class="page active">
-    <div class="welcome">
-        <h1 id="welcomeText">Good Morning 🌸</h1>
-        <p class="subtitle">
-            Understand your cycle. Track your wellbeing. Learn about your body.
-        </p>
-    </div>
-    <div class="card status-card">
-        <h2>💗 Medium Chance of Getting Pregnant</h2>
-        <p>
-            This is an educational estimate based on the cycle information
-            entered in this website. It is not a medical or contraceptive tool.
-        </p>
-        <span class="status">Cycle Tracking Active</span>
-    </div>
-    <div class="cycle-area">
-        <div class="circle">
-            <strong id="cycleDayDisplay">22</strong>
-            <span>Cycle Day</span>
-        </div>
-        <div>
-            <div class="countdowns">
-                <div class="count-box">
-                    <strong id="periodCountdown">10</strong>
-                    <span>Days Until Period</span>
-                </div>
-                <div class="count-box">
-                    <strong id="ovulationCountdown">27</strong>
-                    <span>Days Until Ovulation</span>
-                </div>
-            </div>
-            <br>
-            <button class="btn primary" onclick="showPage('track')">
-                ➕ Track Today
-            </button>
-            <button class="btn purple" onclick="showPage('fertility')">
-                💜 Fertility
-            </button>
-        </div>
-    </div>
-    <div class="info-row">
-        <div class="info-box">
-            <div class="icon">🩸</div>
-            <strong>Next Period</strong>
-            <span>10 days</span>
-        </div>
-        <div class="info-box">
-            <div class="icon">💜</div>
-            <strong>Ovulation</strong>
-            <span>Estimated</span>
-        </div>
-        <div class="info-box">
-            <div class="icon">🌙</div>
-            <strong>Cycle Phase</strong>
-            <span>Luteal</span>
-        </div>
-        <div class="info-box">
-            <div class="icon">📆</div>
-            <strong>Cycle Length</strong>
-            <span id="cycleLengthDisplay">32 days</span>
-        </div>
-    </div>
-    <div class="grid">
-        <div class="card">
-            <h3>🩸 Period Information</h3>
-            <p>
-                Your next period is currently estimated to begin in
-                <b>10 days</b>.
-            </p>
-            <br>
-            <button class="btn primary" onclick="startPeriod()">
-                Period Starts
-            </button>
-        </div>
-        <div class="card">
-            <h3>💜 Ovulation Information</h3>
-            <p>
-                Ovulation is the release of an egg from an ovary.
-                The timing can vary between people and cycles.
-            </p>
-            <br>
-            <button class="btn purple" onclick="showPage('fertility')">
-                Learn More
-            </button>
-        </div>
-        <div class="card">
-            <h3>📝 Today's Record</h3>
-            <p id="todayRecord">
-                You have not added today's information yet.
-            </p>
-            <br>
-            <button class="btn green" onclick="showPage('track')">
-                Add Information
-            </button>
-        </div>
-    </div>
-    <div class="tip">
-        <h3>💡 Today's Self-Care Information</h3>
-        <p>
-            During different stages of the menstrual cycle, some people
-            experience changes in energy, mood, appetite, bloating or
-            discomfort. Tracking your personal pattern can help you
-            understand your own cycle.
-        </p>
-        <br>
-        <button class="btn green" onclick="showPage('selfcare')">
-            Explore Self Care →
-        </button>
-    </div>
+<div class="welcome">
+<h1 id="welcomeText">Good Morning 🌸</h1>
+<p class="subtitle">
+Understand your cycle. Track your wellbeing. Learn about your body.
+</p>
+</div>
+<div class="card status-card">
+<h2>💗 Medium Chance of Getting Pregnant</h2>
+<p>
+This is an educational estimate based on the cycle information
+entered in this website. It is not a medical or contraceptive tool.
+</p>
+<span class="status">Cycle Tracking Active</span>
+</div>
+<div class="cycle-area">
+<div class="circle">
+<strong id="cycleDayDisplay">22</strong>
+<span>Cycle Day</span>
+</div>
+<div>
+<div class="countdowns">
+<div class="count-box">
+<strong id="periodCountdown">10</strong>
+<span>Days Until Period</span>
+</div>
+<div class="count-box">
+<strong id="ovulationCountdown">27</strong>
+<span>Days Until Ovulation</span>
+</div>
+</div>
+<br>
+<button class="btn primary" onclick="showPage('track')">
+➕ Track Today
+</button>
+<button class="btn purple" onclick="showPage('fertility')">
+💜 Fertility
+</button>
+</div>
+</div>
+<div class="info-row">
+<div class="info-box">
+<div class="icon">🩸</div>
+<strong>Next Period</strong>
+<span>10 days</span>
+</div>
+<div class="info-box">
+<div class="icon">💜</div>
+<strong>Ovulation</strong>
+<span>Estimated</span>
+</div>
+<div class="info-box">
+<div class="icon">🌙</div>
+<strong>Cycle Phase</strong>
+<span>Luteal</span>
+</div>
+<div class="info-box">
+<div class="icon">📆</div>
+<strong>Cycle Length</strong>
+<span id="cycleLengthDisplay">32 days</span>
+</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>🩸 Period Information</h3>
+<p>
+Your next period is currently estimated to begin in
+<b>10 days</b>.
+</p>
+<br>
+<button class="btn primary" onclick="startPeriod()">
+Period Starts
+</button>
+</div>
+<div class="card">
+<h3>💜 Ovulation Information</h3>
+<p>
+Ovulation is the release of an egg from an ovary.
+The timing can vary between people and cycles.
+</p>
+<br>
+<button class="btn purple" onclick="showPage('fertility')">
+Learn More
+</button>
+</div>
+<div class="card">
+<h3>📝 Today's Record</h3>
+<p id="todayRecord">
+You have not added today's information yet.
+</p>
+<br>
+<button class="btn green" onclick="showPage('track')">
+Add Information
+</button>
+</div>
+</div>
+<div class="tip">
+<h3>💡 Today's Self-Care Information</h3>
+<p>
+During different stages of the menstrual cycle, some people
+experience changes in energy, mood, appetite, bloating or
+discomfort. Tracking your personal pattern can help you
+understand your own cycle.
+</p>
+<br>
+<button class="btn green" onclick="showPage('selfcare')">
+Explore Self Care →
+</button>
+</div>
 </section>
 <!-- ================= CALENDAR ================= -->
 <section id="calendar" class="page">
-    <h1>📅 Cycle Calendar</h1>
-    <p class="subtitle">
-        See your recorded and estimated cycle days at a glance.
-    </p>
-    <div class="calendar-card">
-        <div class="calendar-top">
-            <button onclick="changeMonth(-1)">← Previous</button>
-            <h2 id="monthTitle">September 2026</h2>
-            <button onclick="changeMonth(1)">Next →</button>
-        </div>
-        <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-        </div>
-        <div class="days" id="calendarDays"></div>
-        <div class="legend">
-            <span>🌸 Period</span>
-            <span>💜 Fertile</span>
-            <span>🔵 Today</span>
-            <span>🌷 Predicted Period</span>
-        </div>
-        <div id="dateDetail" class="date-detail"></div>
-        <br>
-        <button class="btn primary" onclick="editPeriod()">
-            ✏️ Edit Period
-        </button>
-        <button class="btn green" onclick="addCalendarNote()">
-            📝 Add Note
-        </button>
-    </div>
+<h1>📅 Cycle Calendar</h1>
+<p class="subtitle">
+See your recorded and estimated cycle days at a glance.
+</p>
+<div class="calendar-card">
+<div class="calendar-top">
+<button onclick="changeMonth(-1)">← Previous</button>
+<h2 id="monthTitle">September 2026</h2>
+<button onclick="changeMonth(1)">Next →</button>
+</div>
+<div class="weekdays">
+<div>Sun</div>
+<div>Mon</div>
+<div>Tue</div>
+<div>Wed</div>
+<div>Thu</div>
+<div>Fri</div>
+<div>Sat</div>
+</div>
+<div class="days" id="calendarDays"></div>
+<div class="legend">
+<span>🌸 Period</span>
+<span>💜 Fertile</span>
+<span>🔵 Today</span>
+<span>🌷 Predicted Period</span>
+</div>
+<div id="dateDetail" class="date-detail"></div>
+<br>
+<button class="btn primary" onclick="editPeriod()">
+✏️ Edit Period
+</button>
+<button class="btn green" onclick="addCalendarNote()">
+📝 Add Note
+</button>
+</div>
 </section>
 <!-- ================= TRACK ================= -->
 <section id="track" class="page">
-    <h1>➕ Track Your Day</h1>
-    <p class="subtitle">
-        Record your physical and emotional wellbeing.
-    </p>
-    <div class="card form-card">
-        <div class="form-group">
-            <label>🩸 Period Flow</label>
-            <div class="choice-container">
-                <div class="choice" onclick="selectChoice(this,'flow')">None</div>
-                <div class="choice" onclick="selectChoice(this,'flow')">Spotting</div>
-                <div class="choice" onclick="selectChoice(this,'flow')">Light</div>
-                <div class="choice" onclick="selectChoice(this,'flow')">Medium</div>
-                <div class="choice" onclick="selectChoice(this,'flow')">Heavy</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>😊 Mood</label>
-            <div class="choice-container">
-                <div class="choice" onclick="selectChoice(this,'mood')">😊 Happy</div>
-                <div class="choice" onclick="selectChoice(this,'mood')">😌 Calm</div>
-                <div class="choice" onclick="selectChoice(this,'mood')">😴 Tired</div>
-                <div class="choice" onclick="selectChoice(this,'mood')">😢 Sad</div>
-                <div class="choice" onclick="selectChoice(this,'mood')">😡 Irritated</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>💢 Symptoms</label>
-            <div class="choice-container">
-                <div class="choice" onclick="toggleChoice(this)">Cramps</div>
-                <div class="choice" onclick="toggleChoice(this)">Back Pain</div>
-                <div class="choice" onclick="toggleChoice(this)">Headache</div>
-                <div class="choice" onclick="toggleChoice(this)">Bloating</div>
-                <div class="choice" onclick="toggleChoice(this)">Acne</div>
-                <div class="choice" onclick="toggleChoice(this)">Fatigue</div>
-                <div class="choice" onclick="toggleChoice(this)">Nausea</div>
-                <div class="choice" onclick="toggleChoice(this)">Breast Tenderness</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>💧 Discharge</label>
-            <select id="discharge">
-                <option>None</option>
-                <option>Dry</option>
-                <option>Sticky</option>
-                <option>Creamy</option>
-                <option>Watery</option>
-                <option>Egg-white</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>📝 Personal Note</label>
-            <textarea
-                id="dailyNote"
-                placeholder="How are you feeling today? Write anything you want to remember..."
-            ></textarea>
-        </div>
-        <button class="btn primary" onclick="saveTracking()">
-            💾 Save Today's Information
-        </button>
-        <button class="btn grey" onclick="clearTracking()">
-            Clear
-        </button>
-    </div>
+<h1>➕ Track Your Day</h1>
+<p class="subtitle">
+Record your physical and emotional wellbeing.
+</p>
+<div class="card form-card">
+<div class="form-group">
+<label>🩸 Period Flow</label>
+<div class="choice-container">
+<div class="choice" onclick="selectChoice(this,'flow')">None</div>
+<div class="choice" onclick="selectChoice(this,'flow')">Spotting</div>
+<div class="choice" onclick="selectChoice(this,'flow')">Light</div>
+<div class="choice" onclick="selectChoice(this,'flow')">Medium</div>
+<div class="choice" onclick="selectChoice(this,'flow')">Heavy</div>
+</div>
+</div>
+<div class="form-group">
+<label>😊 Mood</label>
+<div class="choice-container">
+<div class="choice" onclick="selectChoice(this,'mood')">😊 Happy</div>
+<div class="choice" onclick="selectChoice(this,'mood')">😌 Calm</div>
+<div class="choice" onclick="selectChoice(this,'mood')">😴 Tired</div>
+<div class="choice" onclick="selectChoice(this,'mood')">😢 Sad</div>
+<div class="choice" onclick="selectChoice(this,'mood')">😡 Irritated</div>
+</div>
+</div>
+<div class="form-group">
+<label>💢 Symptoms</label>
+<div class="choice-container">
+<div class="choice" onclick="toggleChoice(this)">Cramps</div>
+<div class="choice" onclick="toggleChoice(this)">Back Pain</div>
+<div class="choice" onclick="toggleChoice(this)">Headache</div>
+<div class="choice" onclick="toggleChoice(this)">Bloating</div>
+<div class="choice" onclick="toggleChoice(this)">Acne</div>
+<div class="choice" onclick="toggleChoice(this)">Fatigue</div>
+<div class="choice" onclick="toggleChoice(this)">Nausea</div>
+<div class="choice" onclick="toggleChoice(this)">Breast Tenderness</div>
+</div>
+</div>
+<div class="form-group">
+<label>💧 Discharge</label>
+<select id="discharge">
+<option>None</option>
+<option>Dry</option>
+<option>Sticky</option>
+<option>Creamy</option>
+<option>Watery</option>
+<option>Egg-white</option>
+</select>
+</div>
+<div class="form-group">
+<label>📝 Personal Note</label>
+<textarea
+id="dailyNote"
+placeholder="How are you feeling today? Write anything you want to remember..."
+></textarea>
+</div>
+<button class="btn primary" onclick="saveTracking()">
+💾 Save Today's Information
+</button>
+<button class="btn grey" onclick="clearTracking()">
+Clear
+</button>
+</div>
 </section>
 <!-- ================= FERTILITY ================= -->
 <section id="fertility" class="page">
-    <h1>💜 Fertility & Ovulation</h1>
-    <p class="subtitle">
-        Learn how cycle timing is commonly described.
-    </p>
-    <div class="card fertility-box">
-        <h2>Estimated Fertility Window</h2>
-        <p>
-            Fertility varies from person to person. Calendar estimates
-            should not be used as a method of contraception.
-        </p>
-        <div class="fertility-level">
-            <div class="level-low"></div>
-            <div class="level-medium"></div>
-            <div class="level-high"></div>
-            <div class="level-peak"></div>
-        </div>
-        <div class="info-row">
-            <div class="info-box">
-                <strong>Low</strong>
-                Earlier cycle
-            </div>
-            <div class="info-box">
-                <strong>Medium</strong>
-                Approaching fertile window
-            </div>
-            <div class="info-box">
-                <strong>High</strong>
-                Fertile window
-            </div>
-            <div class="info-box">
-                <strong>Peak</strong>
-                Estimated ovulation
-            </div>
-        </div>
-    </div>
-    <div class="grid">
-        <div class="card">
-            <h3>💜 What is Ovulation?</h3>
-            <p>
-                Ovulation is when an ovary releases an egg. The timing
-                can change between cycles and individuals.
-            </p>
-        </div>
-        <div class="card">
-            <h3>🌱 Fertile Window</h3>
-            <p>
-                The fertile window refers to the days around ovulation
-                when pregnancy can be more likely.
-            </p>
-        </div>
-        <div class="card">
-            <h3>📊 Why Track?</h3>
-            <p>
-                Recording cycle information can help users identify
-                patterns in their own menstrual history.
-            </p>
-        </div>
-    </div>
+<h1>💜 Fertility & Ovulation</h1>
+<p class="subtitle">
+Learn how cycle timing is commonly described.
+</p>
+<div class="card fertility-box">
+<h2>Estimated Fertility Window</h2>
+<p>
+Fertility varies from person to person. Calendar estimates
+should not be used as a method of contraception.
+</p>
+<div class="fertility-level">
+<div class="level-low"></div>
+<div class="level-medium"></div>
+<div class="level-high"></div>
+<div class="level-peak"></div>
+</div>
+<div class="info-row">
+<div class="info-box">
+<strong>Low</strong>
+Earlier cycle
+</div>
+<div class="info-box">
+<strong>Medium</strong>
+Approaching fertile window
+</div>
+<div class="info-box">
+<strong>High</strong>
+Fertile window
+</div>
+<div class="info-box">
+<strong>Peak</strong>
+Estimated ovulation
+</div>
+</div>
+</div>
+<div class="grid">
+<div class="card">
+<h3>💜 What is Ovulation?</h3>
+<p>
+Ovulation is when an ovary releases an egg. The timing
+can change between cycles and individuals.
+</p>
+</div>
+<div class="card">
+<h3>🌱 Fertile Window</h3>
+<p>
+The fertile window refers to the days around ovulation
+when pregnancy can be more likely.
+</p>
+</div>
+<div class="card">
+<h3>📊 Why Track?</h3>
+<p>
+Recording cycle information can help users identify
+patterns in their own menstrual history.
+</p>
+</div>
+</div>
 </section>
 <!-- ================= SELF CARE — ENHANCED! ================= -->
 <section id="selfcare" class="page">
-    <h1>💗 Self Care & Education</h1>
-    <p class="subtitle">
-        Learn more about periods, symptoms and menstrual wellbeing.
-    </p>
+<h1>💗 Self Care & Education</h1>
+<p class="subtitle">
+Learn more about periods, symptoms and menstrual wellbeing.
+</p>
 
-    <!-- ✨ NEW: DAILY SELF-CARE ROUTINE -->
-    <div class="daily-tip-box">
-        <h2>🌿 Your Daily Self-Care Guide</h2>
-        <p style="margin-top:8px; color:#7a6b72;">Small habits that make a big difference</p>
-        <div class="tip-grid">
-            <div class="tip-item">
-                <strong>💧 Hydrate</strong>
-                <p>Drink plenty of water — helps reduce bloating and fatigue.</p>
-            </div>
-            <div class="tip-item">
-                <strong>😴 Rest</strong>
-                <p>Your body needs extra rest during your period and before.</p>
-            </div>
-            <div class="tip-item">
-                <strong>🔥 Warmth</strong>
-                <p>A warm compress can ease cramps and soothe muscles.</p>
-            </div>
-            <div class="tip-item">
-                <strong>🧘 Move Gently</strong>
-                <p>Light walking or stretching can actually reduce pain.</p>
-            </div>
-            <div class="tip-item">
-                <strong>🍎 Nourish</strong>
-                <p>Iron-rich foods, fruits, and vegetables support your body.</p>
-            </div>
-            <div class="tip-item">
-                <strong>💙 Be Kind</strong>
-                <p>Your body is working hard — be patient and gentle with yourself.</p>
-            </div>
-        </div>
-    </div>
+<!-- ✨ NEW: DAILY SELF-CARE ROUTINE -->
+<div class="daily-tip-box">
+<h2>🌿 Your Daily Self-Care Guide</h2>
+<p style="margin-top:8px; color:#7a6b72;">Small habits that make a big difference</p>
+<div class="tip-grid">
+<div class="tip-item">
+<strong>💧 Hydrate</strong>
+<p>Drink plenty of water — helps reduce bloating and fatigue.</p>
+</div>
+<div class="tip-item">
+<strong>😴 Rest</strong>
+<p>Your body needs extra rest during your period and before.</p>
+</div>
+<div class="tip-item">
+<strong>🔥 Warmth</strong>
+<p>A warm compress can ease cramps and soothe muscles.</p>
+</div>
+<div class="tip-item">
+<strong>🧘 Move Gently</strong>
+<p>Light walking or stretching can actually reduce pain.</p>
+</div>
+<div class="tip-item">
+<strong>🍎 Nourish</strong>
+<p>Iron-rich foods, fruits, and vegetables support your body.</p>
+</div>
+<div class="tip-item">
+<strong>💙 Be Kind</strong>
+<p>Your body is working hard — be patient and gentle with yourself.</p>
+</div>
+</div>
+</div>
 
-    <!-- ✨ EXPANDED ARTICLES — MORE CONTENT ADDED! -->
-    <div class="grid">
-        <div class="card article" onclick="openArticle('period101')">
-            <div class="article-icon">🌸</div>
-            <h3>Period 101</h3>
-            <p>Understand the basic stages of the menstrual cycle.</p>
-            <div id="period101" class="article-content">
-                <b>Understanding the Menstrual Cycle</b>
-                <p>
-                    The menstrual cycle is a series of changes that prepare the body for a possible pregnancy. 
-                    Cycle length can vary between individuals and from month to month — this is completely normal.
-                </p>
-                <br>
-                <b>The 4 Main Phases:</b>
-                <ul style="margin-left:20px; margin-top:8px;">
-                    <li><b>🩸 Menstrual Phase</b> — Uterus lining sheds; bleeding typically lasts 3–7 days.</li>
-                    <li><b>🌱 Follicular Phase</b> — Body prepares an egg; energy levels often rise.</li>
-                    <li><b>💜 Ovulation Phase</b> — Egg is released; most fertile time of the cycle.</li>
-                    <li><b>🌙 Luteal Phase</b> — Body prepares for next period; PMS symptoms may appear.</li>
-                </ul>
-            </div>
-        </div>
+<!-- ✨ EXPANDED ARTICLES — MORE CONTENT ADDED! -->
+<div class="grid">
+<div class="card article" onclick="openArticle('period101')">
+<div class="article-icon">🌸</div>
+<h3>Period 101</h3>
+<p>Understand the basic stages of the menstrual cycle.</p>
+<div id="period101" class="article-content">
+<b>Understanding the Menstrual Cycle</b>
+<p>
+The menstrual cycle is a series of changes that prepare the body for a possible pregnancy. 
+Cycle length can vary between individuals and from month to month — this is completely normal.
+</p>
+<br>
+<b>The 4 Main Phases:</b>
+<ul style="margin-left:20px; margin-top:8px;">
+<li><b>🩸 Menstrual Phase</b> — Uterus lining sheds; bleeding typically lasts 3–7 days.</li>
+<li><b>🌱 Follicular Phase</b> — Body prepares an egg; energy levels often rise.</li>
+<li><b>💜 Ovulation Phase</b> — Egg is released; most fertile time of the cycle.</li>
+<li><b>🌙 Luteal Phase</b> — Body prepares for next period; PMS symptoms may appear.</li>
+</ul>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('cramps')">
-            <div class="article-icon">🌿</div>
-            <h3>Period Cramps</h3>
-            <p>Learn about common menstrual discomfort & how to feel better.</p>
-            <div id="cramps" class="article-content">
-                <b>Period Cramps — What Helps?</b>
-                <p>
-                    Menstrual cramps happen when the uterus contracts to help shed its lining. 
-                    This is caused by chemicals called prostaglandins. Higher levels may mean stronger cramps.
-                </p>
-                <br>
-                <b>✅ Things That May Help:</b>
-                <ul style="margin-left:20px; margin-top:8px;">
-                    <li>🧊 <b>Heat:</b> Hot water bottle or warm towel on your belly</li>
-                    <li>🚶 <b>Movement:</b> Light walking or gentle yoga stretches</li>
-                    <li>💧 <b>Hydration:</b> Drinking water reduces water retention</li>
-                    <li>🛌 <b>Rest:</b> Listen to your body — extra sleep helps</li>
-                    <li>🍵 <b>Teas:</b> Ginger, chamomile, or peppermint may soothe</li>
-                </ul>
-                <br>
-                <p><b>⚠️ Important:</b> If pain is severe or stops you from daily activities, please see a doctor.</p>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('cramps')">
+<div class="article-icon">🌿</div>
+<h3>Period Cramps</h3>
+<p>Learn about common menstrual discomfort & how to feel better.</p>
+<div id="cramps" class="article-content">
+<b>Period Cramps — What Helps?</b>
+<p>
+Menstrual cramps happen when the uterus contracts to help shed its lining. 
+This is caused by chemicals called prostaglandins. Higher levels may mean stronger cramps.
+</p>
+<br>
+<b>✅ Things That May Help:</b>
+<ul style="margin-left:20px; margin-top:8px;">
+<li>🧊 <b>Heat:</b> Hot water bottle or warm towel on your belly</li>
+<li>🚶 <b>Movement:</b> Light walking or gentle yoga stretches</li>
+<li>💧 <b>Hydration:</b> Drinking water reduces water retention</li>
+<li>🛌 <b>Rest:</b> Listen to your body — extra sleep helps</li>
+<li>🍵 <b>Teas:</b> Ginger, chamomile, or peppermint may soothe</li>
+</ul>
+<br>
+<p><b>⚠️ Important:</b> If pain is severe or stops you from daily activities, please see a doctor.</p>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('diet')">
-            <div class="article-icon">🍎</div>
-            <h3>Food & Nutrition</h3>
-            <p>What to eat for energy, mood, and comfort throughout your cycle.</p>
-            <div id="diet" class="article-content">
-                <b>🥗 Eating Well During Your Cycle</b>
-                <p>Your nutritional needs change throughout the month. Here's a simple guide:</p>
-                <br>
-                <b>🩸 During Your Period:</b>
-                <ul style="margin-left:20px;">
-                    <li>✅ <b>Iron-rich foods:</b> Spinach, lentils, red meat, beans — replace what's lost</li>
-                    <li>✅ <b>Warm foods:</b> Soups, stews, ginger tea — comforting and warming</li>
-                    <li>✅ <b>Magnesium:</b> Dark chocolate, bananas, nuts — may reduce cramps</li>
-                    <li>❌ Limit: Salty foods (bloating), too much caffeine (anxiety/mood swings)</li>
-                </ul>
-                <br>
-                <b>💜 Before & After Ovulation:</b>
-                <ul style="margin-left:20px;">
-                    <li>✅ Complex carbs — steady energy</li>
-                    <li>✅ Healthy fats — avocado, olive oil, nuts</li>
-                    <li>✅ Protein — keeps blood sugar stable</li>
-                </ul>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('diet')">
+<div class="article-icon">🍎</div>
+<h3>Food & Nutrition</h3>
+<p>What to eat for energy, mood, and comfort throughout your cycle.</p>
+<div id="diet" class="article-content">
+<b>🥗 Eating Well During Your Cycle</b>
+<p>Your nutritional needs change throughout the month. Here's a simple guide:</p>
+<br>
+<b>🩸 During Your Period:</b>
+<ul style="margin-left:20px;">
+<li>✅ <b>Iron-rich foods:</b> Spinach, lentils, red meat, beans — replace what's lost</li>
+<li>✅ <b>Warm foods:</b> Soups, stews, ginger tea — comforting and warming</li>
+<li>✅ <b>Magnesium:</b> Dark chocolate, bananas, nuts — may reduce cramps</li>
+<li>❌ Limit: Salty foods (bloating), too much caffeine (anxiety/mood swings)</li>
+</ul>
+<br>
+<b>💜 Before & After Ovulation:</b>
+<ul style="margin-left:20px;">
+<li>✅ Complex carbs — steady energy</li>
+<li>✅ Healthy fats — avocado, olive oil, nuts</li>
+<li>✅ Protein — keeps blood sugar stable</li>
+</ul>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('sleep')">
-            <div class="article-icon">😴</div>
-            <h3>Sleep & Energy</h3>
-            <p>Why your sleep changes and how to rest better.</p>
-            <div id="sleep" class="article-content">
-                <b>🌙 Sleep & Your Cycle</b>
-                <p>
-                    Hormone changes directly affect sleep. Many notice deeper sleep after ovulation, 
-                    and lighter, more restless sleep just before or during their period.
-                </p>
-                <br>
-                <b>💤 Better Sleep Habits:</b>
-                <ul style="margin-left:20px;">
-                    <li>⏰ Keep a consistent bedtime — even on weekends</li>
-                    <li>📱 Put screens away 1 hour before bed</li>
-                    <li>🌡️ Keep your room cool — helps deeper sleep</li>
-                    <li>☕ Reduce caffeine after 2 PM</li>
-                    <li>📝 Write worries down before bed — clears your mind</li>
-                </ul>
-                <br>
-                <p>Remember: Feeling tired is your body's signal to slow down — not push harder.</p>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('sleep')">
+<div class="article-icon">😴</div>
+<h3>Sleep & Energy</h3>
+<p>Why your sleep changes and how to rest better.</p>
+<div id="sleep" class="article-content">
+<b>🌙 Sleep & Your Cycle</b>
+<p>
+Hormone changes directly affect sleep. Many notice deeper sleep after ovulation, 
+and lighter, more restless sleep just before or during their period.
+</p>
+<br>
+<b>💤 Better Sleep Habits:</b>
+<ul style="margin-left:20px;">
+<li>⏰ Keep a consistent bedtime — even on weekends</li>
+<li>📱 Put screens away 1 hour before bed</li>
+<li>🌡️ Keep your room cool — helps deeper sleep</li>
+<li>☕ Reduce caffeine after 2 PM</li>
+<li>📝 Write worries down before bed — clears your mind</li>
+</ul>
+<br>
+<p>Remember: Feeling tired is your body's signal to slow down — not push harder.</p>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('spotting')">
-            <div class="article-icon">🩷</div>
-            <h3>Spotting vs Period</h3>
-            <p>Understand the general difference and when to check in.</p>
-            <div id="spotting" class="article-content">
-                <b>Spotting vs Menstrual Bleeding</b>
-                <p>
-                    Spotting means very light bleeding — just a few drops or marks on underwear, 
-                    not enough to need a full pad or tampon. It can happen:
-                </p>
-                <ul style="margin-left:20px; margin-top:8px;">
-                    <li>🌸 At the very start or end of your period</li>
-                    <li>💜 Around ovulation — some light spotting is common</li>
-                    <li>📅 When cycles are adjusting or irregular</li>
-                </ul>
-                <p style="margin-top:10px;">
-                    Bleeding patterns vary person to person. If spotting happens often or is unusual for you, 
-                    a healthcare provider can help explain it.
-                </p>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('spotting')">
+<div class="article-icon">🩷</div>
+<h3>Spotting vs Period</h3>
+<p>Understand the general difference and when to check in.</p>
+<div id="spotting" class="article-content">
+<b>Spotting vs Menstrual Bleeding</b>
+<p>
+Spotting means very light bleeding — just a few drops or marks on underwear, 
+not enough to need a full pad or tampon. It can happen:
+</p>
+<ul style="margin-left:20px; margin-top:8px;">
+<li>🌸 At the very start or end of your period</li>
+<li>💜 Around ovulation — some light spotting is common</li>
+<li>📅 When cycles are adjusting or irregular</li>
+</ul>
+<p style="margin-top:10px;">
+Bleeding patterns vary person to person. If spotting happens often or is unusual for you, 
+a healthcare provider can help explain it.
+</p>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('mood')">
-            <div class="article-icon">💛</div>
-            <h3>Mood Changes</h3>
-            <p>Why emotions shift and how to support yourself.</p>
-            <div id="mood" class="article-content">
-                <b>😊 Mood & Hormones — It's Real!</b>
-                <p>
-                    Estrogen and progesterone affect brain chemicals like serotonin and dopamine. 
-                    When these hormones drop before your period, it's completely normal to feel:
-                </p>
-                <ul style="margin-left:20px; margin-top:8px;">
-                    <li>😢 More sensitive or tearful</li>
-                    <li>😡 Easily annoyed or frustrated</li>
-                    <li>😟 Anxious or worried</li>
-                    <li>😔 Tired or unmotivated</li>
-                </ul>
-                <br>
-                <b>💛 What Helps:</b>
-                <ul style="margin-left:20px;">
-                    <li>Journal your feelings — getting them out helps</li>
-                    <li>Talk to someone you trust — you're not being "too much"</li>
-                    <li>Lower expectations — it's okay to do less</li>
-                    <li>Do small things you enjoy — music, a walk, a warm drink</li>
-                </ul>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('mood')">
+<div class="article-icon">💛</div>
+<h3>Mood Changes</h3>
+<p>Why emotions shift and how to support yourself.</p>
+<div id="mood" class="article-content">
+<b>😊 Mood & Hormones — It's Real!</b>
+<p>
+Estrogen and progesterone affect brain chemicals like serotonin and dopamine. 
+When these hormones drop before your period, it's completely normal to feel:
+</p>
+<ul style="margin-left:20px; margin-top:8px;">
+<li>😢 More sensitive or tearful</li>
+<li>😡 Easily annoyed or frustrated</li>
+<li>😟 Anxious or worried</li>
+<li>😔 Tired or unmotivated</li>
+</ul>
+<br>
+<b>💛 What Helps:</b>
+<ul style="margin-left:20px;">
+<li>Journal your feelings — getting them out helps</li>
+<li>Talk to someone you trust — you're not being "too much"</li>
+<li>Lower expectations — it's okay to do less</li>
+<li>Do small things you enjoy — music, a walk, a warm drink</li>
+</ul>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('irregular')">
-            <div class="article-icon">📖</div>
-            <h3>Irregular Periods</h3>
-            <p>Why cycles change and when to seek guidance.</p>
-            <div id="irregular" class="article-content">
-                <b>Irregular Cycles — What's Normal?</b>
-                <p>
-                    "Regular" doesn't mean exactly the same day every single time. 
-                    A variation of a few days is usually nothing to worry about.
-                </p>
-                <br>
-                <b>Common Reasons for Changes:</b>
-                <ul style="margin-left:20px;">
-                    <li>🧠 Stress — big one! Cortisol can delay ovulation</li>
-                    <li>🏃 Sudden weight change or intense exercise</li>
-                    <li>🥗 Diet changes</li>
-                    <li>😴 Sleep schedule shifts</li>
-                    <li>🩺 New medications or health conditions</li>
-                </ul>
-                <br>
-                <p><b>⚠️ See a doctor if:</b> Periods are consistently very long, very painful, 
-                or absent for months — professional advice helps.</p>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('irregular')">
+<div class="article-icon">📖</div>
+<h3>Irregular Periods</h3>
+<p>Why cycles change and when to seek guidance.</p>
+<div id="irregular" class="article-content">
+<b>Irregular Cycles — What's Normal?</b>
+<p>
+"Regular" doesn't mean exactly the same day every single time. 
+A variation of a few days is usually nothing to worry about.
+</p>
+<br>
+<b>Common Reasons for Changes:</b>
+<ul style="margin-left:20px;">
+<li>🧠 Stress — big one! Cortisol can delay ovulation</li>
+<li>🏃 Sudden weight change or intense exercise</li>
+<li>🥗 Diet changes</li>
+<li>😴 Sleep schedule shifts</li>
+<li>🩺 New medications or health conditions</li>
+</ul>
+<br>
+<p><b>⚠️ See a doctor if:</b> Periods are consistently very long, very painful, 
+or absent for months — professional advice helps.</p>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('pms')">
-            <div class="article-icon">🌙</div>
-            <h3>PMS Information</h3>
-            <p>Common premenstrual symptoms and how to manage them.</p>
-            <div id="pms" class="article-content">
-                <b>Premenstrual Symptoms — What Happens?</b>
-                <p>
-                    PMS refers to physical and emotional changes in the days leading up to your period. 
-                    About 3 out of 4 people who menstruate notice some changes.
-                </p>
-                <br>
-                <b>Common Signs:</b>
-                <ul style="margin-left:20px;">
-                    <li>💧 Bloating / water retention</li>
-                    <li>🤕 Breast tenderness</li>
-                    <li>🍫 Food cravings</li>
-                    <li>😤 Mood changes</li>
-                    <li>😴 Feeling tired</li>
-                    <li>🧐 Trouble concentrating</li>
-                </ul>
-                <br>
-                <p>These usually ease once your period starts. If they severely affect your life, speak to a doctor — help is available.</p>
-            </div>
-        </div>
+<div class="card article" onclick="openArticle('pms')">
+<div class="article-icon">🌙</div>
+<h3>PMS Information</h3>
+<p>Common premenstrual symptoms and how to manage them.</p>
+<div id="pms" class="article-content">
+<b>Premenstrual Symptoms — What Happens?</b>
+<p>
+PMS refers to physical and emotional changes in the days leading up to your period. 
+About 3 out of 4 people who menstruate notice some changes.
+</p>
+<br>
+<b>Common Signs:</b>
+<ul style="margin-left:20px;">
+<li>💧 Bloating / water retention</li>
+<li>🤕 Breast tenderness</li>
+<li>🍫 Food cravings</li>
+<li>😤 Mood changes</li>
+<li>😴 Feeling tired</li>
+<li>🧐 Trouble concentrating</li>
+</ul>
+<br>
+<p>These usually ease once your period starts. If they severely affect your life, speak to a doctor — help is available.</p>
+</div>
+</div>
 
-        <div class="card article" onclick="openArticle('selfcheck')">
-            <div class="article-icon">💗</div>
-            <h3>Daily Self-Check</h3>
-            <p>A gentle moment to tune in with yourself.</p>
-            <div id="selfcheck" class="article-content">
-                <b>✨ Today's Gentle Self-Check</b>
-                <p>Take a deep breath and ask yourself — there's no "right" answer:</p>
-                <ul style="margin-left:20px; margin-top:10px;">
-                    <li>💪 How is my energy today? Do I need rest or movement?</li>
-                    <li>❤️ How is my mood? What might I need?</li>
-                    <li>🤲 Any physical discomfort? What would soothe it?</li>
-                    <li>💧 Have I drunk enough water today?</li>
-                    <li>🛏️ Am I getting enough rest?</li>
-                    <li>💙 What's one small thing I can do for myself today?</li>
-                </ul>
-                <br>
-                <p>Tracking these answers over time helps you know YOUR body best 💗</p>
-            </div>
-        </div>
-    </div>
+<div class="card article" onclick="openArticle('selfcheck')">
+<div class="article-icon">💗</div>
+<h3>Daily Self-Check</h3>
+<p>A gentle moment to tune in with yourself.</p>
+<div id="selfcheck" class="article-content">
+<b>✨ Today's Gentle Self-Check</b>
+<p>Take a deep breath and ask yourself — there's no "right" answer:</p>
+<ul style="margin-left:20px; margin-top:10px;">
+<li>💪 How is my energy today? Do I need rest or movement?</li>
+<li>❤️ How is my mood? What might I need?</li>
+<li>🤲 Any physical discomfort? What would soothe it?</li>
+<li>💧 Have I drunk enough water today?</li>
+<li>🛏️ Am I getting enough rest?</li>
+<li>💙 What's one small thing I can do for myself today?</li>
+</ul>
+<br>
+<p>Tracking these answers over time helps you know YOUR body best 💗</p>
+</div>
+</div>
+</div>
 
-    <div class="tip">
-        <h3>🌷 Remember</h3>
-        <p>
-            This website provides general educational information and tracking tools. 
-            It does not diagnose medical conditions or replace advice from a qualified healthcare professional.
-            Every body is different — your cycle is unique to you. Be patient and kind to yourself. 💗
-        </p>
-    </div>
+<div class="tip">
+<h3>🌷 Remember</h3>
+<p>
+This website provides general educational information and tracking tools. 
+It does not diagnose medical conditions or replace advice from a qualified healthcare professional.
+Every body is different — your cycle is unique to you. Be patient and kind to yourself. 💗
+</p>
+</div>
 </section>
 <!-- ================= STATISTICS ================= -->
 <section id="stats" class="page">
-    <h1>📊 Cycle Statistics</h1>
-    <p class="subtitle">
-        Review your recorded cycle patterns.
-    </p>
-    <div class="stat-grid">
-        <div class="stat">
-            <span>Average Cycle</span>
-            <strong id="statCycle">32</strong>
-            days
-        </div>
-        <div class="stat">
-            <span>Period Length</span>
-            <strong id="statPeriod">5</strong>
-            days
-        </div>
-        <div class="stat">
-            <span>Cycles Tracked</span>
-            <strong>6</strong>
-            cycles
-        </div>
-        <div class="stat">
-            <span>Current Day</span>
-            <strong id="statDay">22</strong>
-            day
-        </div>
-    </div>
-    <div class="card">
-        <h2>📈 Your Cycle History</h2>
-        <br>
-        <table class="history">
-            <tr>
-                <th>Cycle</th>
-                <th>Length</th>
-                <th>Period</th>
-                <th>Status</th>
-            </tr>
-            <tr>
-                <td>Cycle 1</td>
-                <td>31 days</td>
-                <td>5 days</td>
-                <td>✓ Complete</td>
-            </tr>
-            <tr>
-                <td>Cycle 2</td>
-                <td>32 days</td>
-                <td>5 days</td>
-                <td>✓ Complete</td>
-            </tr>
-            <tr>
-                <td>Cycle 3</td>
-                <td>30 days</td>
-                <td>4 days</td>
-                <td>✓ Complete</td>
-            </tr>
-            <tr>
-                <td>Cycle 4</td>
-                <td>34 days</td>
-                <td>6 days</td>
-                <td>✓ Complete</td>
-            </tr>
-            <tr>
-                <td>Cycle 5</td>
-                <td>33 days</td>
-                <td>5 days</td>
-                <td>✓ Complete</td>
-            </tr>
-        </table>
-    </div>
-    <div class="grid">
-        <div class="card">
-            <h3>📆 Cycle Pattern</h3>
-            <p>
-                Your example history ranges between approximately
-                30–34 days.
-            </p>
-        </div>
-        <div class="card">
-            <h3>🩸 Period Pattern</h3>
-            <p>
-                Your example period duration is approximately
-                4–6 days.
-            </p>
-        </div>
-        <div class="card">
-            <h3>💡 Understanding Your Data</h3>
-            <p>
-                Statistics become more useful as you record more
-                complete cycles.
-            </p>
-        </div>
-    </div>
+<h1>📊 Cycle Statistics</h1>
+<p class="subtitle">
+Review your recorded cycle patterns.
+</p>
+<div class="stat-grid">
+<div class="stat">
+<span>Average Cycle</span>
+<strong id="statCycle">32</strong>
+days
+</div>
+<div class="stat">
+<span>Period Length</span>
+<strong id="statPeriod">5</strong>
+days
+</div>
+<div class="stat">
+<span>Cycles Tracked</span>
+<strong>6</strong>
+cycles
+</div>
+<div class="stat">
+<span>Current Day</span>
+<strong id="statDay">22</strong>
+day
+</div>
+</div>
+<div class="card">
+<h2>📈 Your Cycle History</h2>
+<br>
+<table class="history">
+<tr>
+<th>Cycle</th>
+<th>Length</th>
+<th>Period</th>
+<th>Status</th>
+</tr>
+<tr>
+<td>Cycle 1</td>
+<td>31 days</td>
+<td>5 days</td>
+<td>✓ Complete</td>
+</tr>
+<tr>
+<td>Cycle 2</td>
+<td>32 days</td>
+<td>5 days</td>
+<td>✓ Complete</td>
+</tr>
+<tr>
+<td>Cycle 3</td>
+<td>30 days</td>
+<td>4 days</td>
+<td>✓ Complete</td>
+</tr>
+<tr>
+<td>Cycle 4</td>
+<td>34 days</td>
+<td>6 days</td>
+<td>✓ Complete</td>
+</tr>
+<tr>
+<td>Cycle 5</td>
+<td>33 days</td>
+<td>5 days</td>
+<td>✓ Complete</td>
+</tr>
+</table>
+</div>
+<div class="grid">
+<div class="card">
+<h3>📆 Cycle Pattern</h3>
+<p>
+Your example history ranges between approximately
+30–34 days.
+</p>
+</div>
+<div class="card">
+<h3>🩸 Period Pattern</h3>
+<p>
+Your example period duration is approximately
+4–6 days.
+</p>
+</div>
+<div class="card">
+<h3>💡 Understanding Your Data</h3>
+<p>
+Statistics become more useful as you record more
+complete cycles.
+</p>
+</div>
+</div>
 </section>
 <!-- ================= NOTIFICATIONS ================= -->
 <section id="notifications" class="page">
-    <h1>🔔 Notifications</h1>
-    <p class="subtitle">
-        Your cycle reminders and tracking reminders.
-    </p>
-    <div class="card">
-        <div class="notification">
-            <h3>🩸 Period Reminder</h3>
-            <p>Your estimated period is 10 days away.</p>
-        </div>
-        <div class="notification">
-            <h3>💜 Ovulation Information</h3>
-            <p>Your estimated fertile window is approaching.</p>
-        </div>
-        <div class="notification">
-            <h3>📝 Daily Tracking</h3>
-            <p>Remember to record today's symptoms and mood.</p>
-        </div>
-    </div>
-    <div class="card">
-        <h2>Reminder Settings</h2>
-        <br>
-        <button class="btn green" onclick="toggleReminder(this)">
-            🔔 Period Reminder: ON
-        </button>
-        <button class="btn purple" onclick="toggleReminder(this)">
-            💜 Ovulation Reminder: ON
-        </button>
-        <button class="btn blue" onclick="toggleReminder(this)">
-            📝 Daily Tracking: ON
-        </button>
-    </div>
+<h1>🔔 Notifications</h1>
+<p class="subtitle">
+Your cycle reminders and tracking reminders.
+</p>
+<div class="card">
+<div class="notification">
+<h3>🩸 Period Reminder</h3>
+<p>Your estimated period is 10 days away.</p>
+</div>
+<div class="notification">
+<h3>💜 Ovulation Information</h3>
+<p>Your estimated fertile window is approaching.</p>
+</div>
+<div class="notification">
+<h3>📝 Daily Tracking</h3>
+<p>Remember to record today's symptoms and mood.</p>
+</div>
+</div>
+<div class="card">
+<h2>Reminder Settings</h2>
+<br>
+<button class="btn green" onclick="toggleReminder(this)">
+🔔 Period Reminder: ON
+</button>
+<button class="btn purple" onclick="toggleReminder(this)">
+💜 Ovulation Reminder: ON
+</button>
+<button class="btn blue" onclick="toggleReminder(this)">
+📝 Daily Tracking: ON
+</button>
+</div>
 </section>
 <!-- ================= MINE ================= -->
 <section id="mine" class="page">
-    <h1>👤 Mine</h1>
-    <p class="subtitle">
-        Personalise your cycle tracker.
-    </p>
-    <div class="card profile">
-        <div class="avatar">🌸</div>
-        <h2 id="profileTitle">My Profile</h2>
-        <br>
-        <div class="form-group">
-            <label>Your Name</label>
-            <input
-                id="nameInput"
-                type="text"
-                placeholder="Enter your name"
-            >
-        </div>
-        <div class="form-group">
-            <label>Average Cycle Length</label>
-            <input
-                id="cycleInput"
-                type="number"
-                value="32"
-            >
-        </div>
-        <div class="form-group">
-            <label>Average Period Length</label>
-            <input
-                id="periodInput"
-                type="number"
-                value="5"
-            >
-        </div>
-        <button class="btn primary" onclick="saveProfile()">
-            💾 Save Profile
-        </button>
-    </div>
-    <div class="card">
-        <h2>⚙️ Settings</h2>
-        <br>
-        <button class="btn green" onclick="openNotifications()">
-            🔔 Notification Settings
-        </button>
-        <button class="btn purple" onclick="showPage('stats')">
-            📊 View Statistics
-        </button>
-        <button class="btn blue" onclick="showPrivacy()">
-            🔐 Privacy Information
-        </button>
-        <button class="btn grey" onclick="resetData()">
-            Reset Saved Data
-        </button>
-    </div>
+<h1>👤 Mine</h1>
+<p class="subtitle">
+Personalise your cycle tracker.
+</p>
+<div class="card profile">
+<div class="avatar">🌸</div>
+<h2 id="profileTitle">My Profile</h2>
+<br>
+<div class="form-group">
+<label>Your Name</label>
+<input
+id="nameInput"
+type="text"
+placeholder="Enter your name"
+>
+</div>
+<div class="form-group">
+<label>Average Cycle Length</label>
+<input
+id="cycleInput"
+type="number"
+value="32"
+>
+</div>
+<div class="form-group">
+<label>Average Period Length</label>
+<input
+id="periodInput"
+type="number"
+value="5"
+>
+</div>
+<button class="btn primary" onclick="saveProfile()">
+💾 Save Profile
+</button>
+</div>
+<div class="card">
+<h2>⚙️ Settings</h2>
+<br>
+<button class="btn green" onclick="openNotifications()">
+🔔 Notification Settings
+</button>
+<button class="btn purple" onclick="showPage('stats')">
+📊 View Statistics
+</button>
+<button class="btn blue" onclick="showPrivacy()">
+🔐 Privacy Information
+</button>
+<button class="btn grey" onclick="resetData()">
+Reset Saved Data
+</button>
+</div>
 </section>
 </div>
 <!-- ================= BOTTOM NAVIGATION ================= -->
 <nav class="bottom-nav">
-    <button class="nav active" onclick="showPage('today',this)">
-        🌸<br>Today
-    </button>
-    <button class="nav" onclick="showPage('calendar',this)">
-        📅<br>Calendar
-    </button>
-    <button class="nav" onclick="showPage('track',this)">
-        ➕<br>Track
-    </button>
-    <button class="nav" onclick="showPage('selfcare',this)">
-        💗<br>Self Care
-    </button>
-    <button class="nav" onclick="showPage('stats',this)">
-        📊<br>Stats
-    </button>
-    <button class="nav" onclick="showPage('mine',this)">
-        👤<br>Mine
-    </button>
+<button class="nav active" onclick="showPage('today',this)">
+🌸<br>Today
+</button>
+<button class="nav" onclick="showPage('calendar',this)">
+📅<br>Calendar
+</button>
+<button class="nav" onclick="showPage('track',this)">
+➕<br>Track
+</button>
+<button class="nav" onclick="showPage('selfcare',this)">
+💗<br>Self Care
+</button>
+<button class="nav" onclick="showPage('stats',this)">
+📊<br>Stats
+</button>
+<button class="nav" onclick="showPage('mine',this)">
+👤<br>Mine
+</button>
 </nav>
 <!-- ================= MODAL ================= -->
 <div id="modal" class="modal">
-    <div class="modal-box">
-        <button class="close" onclick="closeModal()">×</button>
-        <div id="modalContent"></div>
-    </div>
+<div class="modal-box">
+<button class="close" onclick="closeModal()">×</button>
+<div id="modalContent"></div>
+</div>
 </div>
 <script>
 /* ================= GENERAL NAVIGATION ================= */
 function showPage(id,button){
-    document.querySelectorAll(".page").forEach(function(page){
-        page.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
-    document.querySelectorAll(".nav").forEach(function(nav){
-        nav.classList.remove("active");
-    });
-    if(button){
-        button.classList.add("active");
-    }
-    if(id === "calendar"){
-        createCalendar();
-    }
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
+document.getElementById(id).classList.add("active");
+document.querySelectorAll(".nav").forEach(function(nav){
+nav.classList.remove("active");
+});
+if(button){
+button.classList.add("active");
+}
+if(id === "calendar"){
+createCalendar();
+}
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
 /* ================= PROFILE ================= */
 function saveProfile(){
-    let name=document.getElementById("nameInput").value;
-    let cycle=document.getElementById("cycleInput").value;
-    let period=document.getElementById("periodInput").value;
-    localStorage.setItem("bloomName",name);
-    localStorage.setItem("bloomCycle",cycle);
-    localStorage.setItem("bloomPeriod",period);
-    updateProfile();
-    alert("✅ Profile saved successfully!");
+let name=document.getElementById("nameInput").value;
+let cycle=document.getElementById("cycleInput").value;
+let period=document.getElementById("periodInput").value;
+localStorage.setItem("bloomName",name);
+localStorage.setItem("bloomCycle",cycle);
+localStorage.setItem("bloomPeriod",period);
+updateProfile();
+alert("✅ Profile saved successfully!");
 }
 function updateProfile(){
-    let name=localStorage.getItem("bloomName");
-    let cycle=localStorage.getItem("bloomCycle") || 32;
-    let period=localStorage.getItem("bloomPeriod") || 5;
-    if(name){
-        document.getElementById("welcomeText").innerText=
-            "Good Morning, "+name+" 🌸";
-        document.getElementById("profileTitle").innerText=
-            "Hello, "+name+" 🌸";
-        document.getElementById("nameInput").value=name;
-    }
-    document.getElementById("cycleInput").value=cycle;
-    document.getElementById("periodInput").value=period;
-    document.getElementById("cycleLengthDisplay").innerText=
+let name=localStorage.getItem("bloomName");
+let cycle=localStorage.getItem("bloomCycle") || 32;
+let period=localStorage.getItem("bloomPeriod") || 5;
+if(name){
+document.getElementById("welcomeText").innerText=
+"Good Morning, "+name+" 🌸";
+document.getElementById("profileTitle").innerText=
+"Hello, "+name+" 🌸";
+document.getElementById("nameInput").value=name;
+}
+document.getElementById("cycleInput").value=cycle;
+document.getElementById("periodInput").value=period;
+document.getElementById("cycleLengthDisplay").innerText=
+        cycle+" days";
         cycle+" days";
