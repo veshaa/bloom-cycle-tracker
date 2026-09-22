@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -253,6 +253,7 @@ min-height:60px;
 border-radius:15px;
 padding:9px;
 cursor:pointer;
+background:#faf6fa;
 }
 .day:hover{
 background:#f8e9f1;
@@ -560,8 +561,8 @@ Understand your cycle. Track your wellbeing. Learn about your body.
 </p>
 </div>
 <div class="card status-card">
-<h2>💗 Medium Chance of Getting Pregnant</h2>
-<p>
+<h2 id="fertilityStatus">💗 Medium Chance of Getting Pregnant</h2>
+<p id="fertilityNote">
 This is an educational estimate based on the cycle information
 entered in this website. It is not a medical or contraceptive tool.
 </p>
@@ -569,17 +570,17 @@ entered in this website. It is not a medical or contraceptive tool.
 </div>
 <div class="cycle-area">
 <div class="circle">
-<strong id="cycleDayDisplay">22</strong>
+<strong id="cycleDayDisplay">1</strong>
 <span>Cycle Day</span>
 </div>
 <div>
 <div class="countdowns">
 <div class="count-box">
-<strong id="periodCountdown">10</strong>
+<strong id="periodCountdown">--</strong>
 <span>Days Until Period</span>
 </div>
 <div class="count-box">
-<strong id="ovulationCountdown">27</strong>
+<strong id="ovulationCountdown">--</strong>
 <span>Days Until Ovulation</span>
 </div>
 </div>
@@ -596,34 +597,33 @@ entered in this website. It is not a medical or contraceptive tool.
 <div class="info-box">
 <div class="icon">🩸</div>
 <strong>Next Period</strong>
-<span>10 days</span>
+<span id="nextPeriodSpan">--</span>
 </div>
 <div class="info-box">
 <div class="icon">💜</div>
 <strong>Ovulation</strong>
-<span>Estimated</span>
+<span id="ovulationSpan">Estimated</span>
 </div>
 <div class="info-box">
 <div class="icon">🌙</div>
 <strong>Cycle Phase</strong>
-<span>Luteal</span>
+<span id="phaseSpan">--</span>
 </div>
 <div class="info-box">
 <div class="icon">📆</div>
 <strong>Cycle Length</strong>
-<span id="cycleLengthDisplay">32 days</span>
+<span id="cycleLengthDisplay">-- days</span>
 </div>
 </div>
 <div class="grid">
 <div class="card">
 <h3>🩸 Period Information</h3>
-<p>
-Your next period is currently estimated to begin in
-<b>10 days</b>.
+<p id="periodInfo">
+Set your first period start date to begin tracking.
 </p>
 <br>
 <button class="btn primary" onclick="startPeriod()">
-Period Starts
+🩸 Period Starts
 </button>
 </div>
 <div class="card">
@@ -709,7 +709,7 @@ Record your physical and emotional wellbeing.
 <div class="card form-card">
 <div class="form-group">
 <label>🩸 Period Flow</label>
-<div class="choice-container">
+<div class="choice-container" id="flowContainer">
 <div class="choice" onclick="selectChoice(this,'flow')">None</div>
 <div class="choice" onclick="selectChoice(this,'flow')">Spotting</div>
 <div class="choice" onclick="selectChoice(this,'flow')">Light</div>
@@ -719,7 +719,7 @@ Record your physical and emotional wellbeing.
 </div>
 <div class="form-group">
 <label>😊 Mood</label>
-<div class="choice-container">
+<div class="choice-container" id="moodContainer">
 <div class="choice" onclick="selectChoice(this,'mood')">😊 Happy</div>
 <div class="choice" onclick="selectChoice(this,'mood')">😌 Calm</div>
 <div class="choice" onclick="selectChoice(this,'mood')">😴 Tired</div>
@@ -729,7 +729,7 @@ Record your physical and emotional wellbeing.
 </div>
 <div class="form-group">
 <label>💢 Symptoms</label>
-<div class="choice-container">
+<div class="choice-container" id="symptomContainer">
 <div class="choice" onclick="toggleChoice(this)">Cramps</div>
 <div class="choice" onclick="toggleChoice(this)">Back Pain</div>
 <div class="choice" onclick="toggleChoice(this)">Headache</div>
@@ -753,10 +753,7 @@ Record your physical and emotional wellbeing.
 </div>
 <div class="form-group">
 <label>📝 Personal Note</label>
-<textarea
-id="dailyNote"
-placeholder="How are you feeling today? Write anything you want to remember..."
-></textarea>
+<textarea id="dailyNote" placeholder="How are you feeling today? Write anything you want to remember..."></textarea>
 </div>
 <button class="btn primary" onclick="saveTracking()">
 💾 Save Today's Information
@@ -814,27 +811,25 @@ can change between cycles and individuals.
 <div class="card">
 <h3>🌱 Fertile Window</h3>
 <p>
-The fertile window refers to the days around ovulation
-when pregnancy can be more likely.
+The fertile window refers to days around ovulation
+when pregnancy may be more likely. Estimates are not exact.
 </p>
 </div>
 <div class="card">
 <h3>📊 Why Track?</h3>
 <p>
-Recording cycle information can help users identify
-patterns in their own menstrual history.
+Recording cycle information helps identify patterns
+in your own menstrual history.
 </p>
 </div>
 </div>
 </section>
-<!-- ================= SELF CARE — ENHANCED! ================= -->
+<!-- ================= SELF CARE ================= -->
 <section id="selfcare" class="page">
 <h1>💗 Self Care & Education</h1>
 <p class="subtitle">
 Learn more about periods, symptoms and menstrual wellbeing.
 </p>
-
-<!-- ✨ NEW: DAILY SELF-CARE ROUTINE -->
 <div class="daily-tip-box">
 <h2>🌿 Your Daily Self-Care Guide</h2>
 <p style="margin-top:8px; color:#7a6b72;">Small habits that make a big difference</p>
@@ -865,8 +860,6 @@ Learn more about periods, symptoms and menstrual wellbeing.
 </div>
 </div>
 </div>
-
-<!-- ✨ EXPANDED ARTICLES — MORE CONTENT ADDED! -->
 <div class="grid">
 <div class="card article" onclick="openArticle('period101')">
 <div class="article-icon">🌸</div>
@@ -874,384 +867,144 @@ Learn more about periods, symptoms and menstrual wellbeing.
 <p>Understand the basic stages of the menstrual cycle.</p>
 <div id="period101" class="article-content">
 <b>Understanding the Menstrual Cycle</b>
-<p>
-The menstrual cycle is a series of changes that prepare the body for a possible pregnancy. 
-Cycle length can vary between individuals and from month to month — this is completely normal.
-</p>
+<p>The menstrual cycle prepares the body for a possible pregnancy. Length varies person to person — this is normal.</p>
 <br>
 <b>The 4 Main Phases:</b>
 <ul style="margin-left:20px; margin-top:8px;">
-<li><b>🩸 Menstrual Phase</b> — Uterus lining sheds; bleeding typically lasts 3–7 days.</li>
-<li><b>🌱 Follicular Phase</b> — Body prepares an egg; energy levels often rise.</li>
-<li><b>💜 Ovulation Phase</b> — Egg is released; most fertile time of the cycle.</li>
-<li><b>🌙 Luteal Phase</b> — Body prepares for next period; PMS symptoms may appear.</li>
+<li><b>🩸 Menstrual Phase</b> — Lining sheds; bleeding typically 3–7 days.</li>
+<li><b>🌱 Follicular Phase</b> — Body prepares an egg; energy may rise.</li>
+<li><b>💜 Ovulation Phase</b> — Egg released; most fertile time.</li>
+<li><b>🌙 Luteal Phase</b> — Prepares for next period; PMS may appear.</li>
 </ul>
 </div>
 </div>
-
 <div class="card article" onclick="openArticle('cramps')">
 <div class="article-icon">🌿</div>
 <h3>Period Cramps</h3>
-<p>Learn about common menstrual discomfort & how to feel better.</p>
+<p>Common discomfort & how to feel better.</p>
 <div id="cramps" class="article-content">
 <b>Period Cramps — What Helps?</b>
-<p>
-Menstrual cramps happen when the uterus contracts to help shed its lining. 
-This is caused by chemicals called prostaglandins. Higher levels may mean stronger cramps.
-</p>
+<p>Caused by prostaglandins making the uterus contract.</p>
 <br>
 <b>✅ Things That May Help:</b>
-<ul style="margin-left:20px; margin-top:8px;">
-<li>🧊 <b>Heat:</b> Hot water bottle or warm towel on your belly</li>
-<li>🚶 <b>Movement:</b> Light walking or gentle yoga stretches</li>
-<li>💧 <b>Hydration:</b> Drinking water reduces water retention</li>
-<li>🛌 <b>Rest:</b> Listen to your body — extra sleep helps</li>
-<li>🍵 <b>Teas:</b> Ginger, chamomile, or peppermint may soothe</li>
+<ul style="margin-left:20px;">
+<li>🔥 Heat — hot water bottle or warm towel</li>
+<li>🚶 Gentle movement — walking or stretching</li>
+<li>💧 Hydration — reduces water retention</li>
+<li>🍵 Ginger or chamomile tea</li>
 </ul>
-<br>
-<p><b>⚠️ Important:</b> If pain is severe or stops you from daily activities, please see a doctor.</p>
+<p style="margin-top:10px;"><b>⚠️ See a doctor</b> if pain stops daily activities.</p>
 </div>
 </div>
-
 <div class="card article" onclick="openArticle('diet')">
 <div class="article-icon">🍎</div>
 <h3>Food & Nutrition</h3>
-<p>What to eat for energy, mood, and comfort throughout your cycle.</p>
+<p>Eating well throughout your cycle.</p>
 <div id="diet" class="article-content">
 <b>🥗 Eating Well During Your Cycle</b>
-<p>Your nutritional needs change throughout the month. Here's a simple guide:</p>
 <br>
-<b>🩸 During Your Period:</b>
+<b>🩸 During Period:</b>
 <ul style="margin-left:20px;">
-<li>✅ <b>Iron-rich foods:</b> Spinach, lentils, red meat, beans — replace what's lost</li>
-<li>✅ <b>Warm foods:</b> Soups, stews, ginger tea — comforting and warming</li>
-<li>✅ <b>Magnesium:</b> Dark chocolate, bananas, nuts — may reduce cramps</li>
-<li>❌ Limit: Salty foods (bloating), too much caffeine (anxiety/mood swings)</li>
-</ul>
-<br>
-<b>💜 Before & After Ovulation:</b>
-<ul style="margin-left:20px;">
-<li>✅ Complex carbs — steady energy</li>
-<li>✅ Healthy fats — avocado, olive oil, nuts</li>
-<li>✅ Protein — keeps blood sugar stable</li>
+<li>✅ Iron-rich foods — spinach, lentils, beans</li>
+<li>✅ Magnesium — dark chocolate, bananas, nuts</li>
+<li>❌ Less salt & caffeine → less bloating & jitters</li>
 </ul>
 </div>
 </div>
-
 <div class="card article" onclick="openArticle('sleep')">
 <div class="article-icon">😴</div>
 <h3>Sleep & Energy</h3>
-<p>Why your sleep changes and how to rest better.</p>
+<p>Why sleep shifts & how to rest better.</p>
 <div id="sleep" class="article-content">
 <b>🌙 Sleep & Your Cycle</b>
-<p>
-Hormone changes directly affect sleep. Many notice deeper sleep after ovulation, 
-and lighter, more restless sleep just before or during their period.
-</p>
+<p>Hormones affect sleep quality — restlessness before period is common.</p>
 <br>
-<b>💤 Better Sleep Habits:</b>
+<b>💤 Better Sleep:</b>
 <ul style="margin-left:20px;">
-<li>⏰ Keep a consistent bedtime — even on weekends</li>
-<li>📱 Put screens away 1 hour before bed</li>
-<li>🌡️ Keep your room cool — helps deeper sleep</li>
-<li>☕ Reduce caffeine after 2 PM</li>
-<li>📝 Write worries down before bed — clears your mind</li>
-</ul>
-<br>
-<p>Remember: Feeling tired is your body's signal to slow down — not push harder.</p>
-</div>
-</div>
-
-<div class="card article" onclick="openArticle('spotting')">
-<div class="article-icon">🩷</div>
-<h3>Spotting vs Period</h3>
-<p>Understand the general difference and when to check in.</p>
-<div id="spotting" class="article-content">
-<b>Spotting vs Menstrual Bleeding</b>
-<p>
-Spotting means very light bleeding — just a few drops or marks on underwear, 
-not enough to need a full pad or tampon. It can happen:
-</p>
-<ul style="margin-left:20px; margin-top:8px;">
-<li>🌸 At the very start or end of your period</li>
-<li>💜 Around ovulation — some light spotting is common</li>
-<li>📅 When cycles are adjusting or irregular</li>
-</ul>
-<p style="margin-top:10px;">
-Bleeding patterns vary person to person. If spotting happens often or is unusual for you, 
-a healthcare provider can help explain it.
-</p>
-</div>
-</div>
-
-<div class="card article" onclick="openArticle('mood')">
-<div class="article-icon">💛</div>
-<h3>Mood Changes</h3>
-<p>Why emotions shift and how to support yourself.</p>
-<div id="mood" class="article-content">
-<b>😊 Mood & Hormones — It's Real!</b>
-<p>
-Estrogen and progesterone affect brain chemicals like serotonin and dopamine. 
-When these hormones drop before your period, it's completely normal to feel:
-</p>
-<ul style="margin-left:20px; margin-top:8px;">
-<li>😢 More sensitive or tearful</li>
-<li>😡 Easily annoyed or frustrated</li>
-<li>😟 Anxious or worried</li>
-<li>😔 Tired or unmotivated</li>
-</ul>
-<br>
-<b>💛 What Helps:</b>
-<ul style="margin-left:20px;">
-<li>Journal your feelings — getting them out helps</li>
-<li>Talk to someone you trust — you're not being "too much"</li>
-<li>Lower expectations — it's okay to do less</li>
-<li>Do small things you enjoy — music, a walk, a warm drink</li>
+<li>⏰ Consistent bedtime</li>
+<li>📱 Screens off 1 hour before bed</li>
+<li>☕ Less caffeine after 2 PM</li>
 </ul>
 </div>
 </div>
-
-<div class="card article" onclick="openArticle('irregular')">
-<div class="article-icon">📖</div>
-<h3>Irregular Periods</h3>
-<p>Why cycles change and when to seek guidance.</p>
-<div id="irregular" class="article-content">
-<b>Irregular Cycles — What's Normal?</b>
-<p>
-"Regular" doesn't mean exactly the same day every single time. 
-A variation of a few days is usually nothing to worry about.
-</p>
-<br>
-<b>Common Reasons for Changes:</b>
-<ul style="margin-left:20px;">
-<li>🧠 Stress — big one! Cortisol can delay ovulation</li>
-<li>🏃 Sudden weight change or intense exercise</li>
-<li>🥗 Diet changes</li>
-<li>😴 Sleep schedule shifts</li>
-<li>🩺 New medications or health conditions</li>
-</ul>
-<br>
-<p><b>⚠️ See a doctor if:</b> Periods are consistently very long, very painful, 
-or absent for months — professional advice helps.</p>
 </div>
-</div>
-
-<div class="card article" onclick="openArticle('pms')">
-<div class="article-icon">🌙</div>
-<h3>PMS Information</h3>
-<p>Common premenstrual symptoms and how to manage them.</p>
-<div id="pms" class="article-content">
-<b>Premenstrual Symptoms — What Happens?</b>
-<p>
-PMS refers to physical and emotional changes in the days leading up to your period. 
-About 3 out of 4 people who menstruate notice some changes.
-</p>
-<br>
-<b>Common Signs:</b>
-<ul style="margin-left:20px;">
-<li>💧 Bloating / water retention</li>
-<li>🤕 Breast tenderness</li>
-<li>🍫 Food cravings</li>
-<li>😤 Mood changes</li>
-<li>😴 Feeling tired</li>
-<li>🧐 Trouble concentrating</li>
-</ul>
-<br>
-<p>These usually ease once your period starts. If they severely affect your life, speak to a doctor — help is available.</p>
-</div>
-</div>
-
-<div class="card article" onclick="openArticle('selfcheck')">
-<div class="article-icon">💗</div>
-<h3>Daily Self-Check</h3>
-<p>A gentle moment to tune in with yourself.</p>
-<div id="selfcheck" class="article-content">
-<b>✨ Today's Gentle Self-Check</b>
-<p>Take a deep breath and ask yourself — there's no "right" answer:</p>
-<ul style="margin-left:20px; margin-top:10px;">
-<li>💪 How is my energy today? Do I need rest or movement?</li>
-<li>❤️ How is my mood? What might I need?</li>
-<li>🤲 Any physical discomfort? What would soothe it?</li>
-<li>💧 Have I drunk enough water today?</li>
-<li>🛏️ Am I getting enough rest?</li>
-<li>💙 What's one small thing I can do for myself today?</li>
-</ul>
-<br>
-<p>Tracking these answers over time helps you know YOUR body best 💗</p>
-</div>
-</div>
-</div>
-
 <div class="tip">
 <h3>🌷 Remember</h3>
-<p>
-This website provides general educational information and tracking tools. 
-It does not diagnose medical conditions or replace advice from a qualified healthcare professional.
-Every body is different — your cycle is unique to you. Be patient and kind to yourself. 💗
-</p>
+<p>This is educational, not medical advice. Every body is unique — be kind to yourself. 💗</p>
 </div>
 </section>
 <!-- ================= STATISTICS ================= -->
 <section id="stats" class="page">
 <h1>📊 Cycle Statistics</h1>
-<p class="subtitle">
-Review your recorded cycle patterns.
-</p>
+<p class="subtitle">Review your patterns.</p>
 <div class="stat-grid">
 <div class="stat">
 <span>Average Cycle</span>
-<strong id="statCycle">32</strong>
-days
+<strong id="statCycle">--</strong> days
 </div>
 <div class="stat">
 <span>Period Length</span>
-<strong id="statPeriod">5</strong>
-days
+<strong id="statPeriod">--</strong> days
 </div>
 <div class="stat">
 <span>Cycles Tracked</span>
-<strong>6</strong>
-cycles
+<strong id="statTracked">0</strong>
 </div>
 <div class="stat">
 <span>Current Day</span>
-<strong id="statDay">22</strong>
-day
+<strong id="statDay">--</strong>
 </div>
 </div>
 <div class="card">
 <h2>📈 Your Cycle History</h2>
 <br>
-<table class="history">
-<tr>
-<th>Cycle</th>
-<th>Length</th>
-<th>Period</th>
-<th>Status</th>
-</tr>
-<tr>
-<td>Cycle 1</td>
-<td>31 days</td>
-<td>5 days</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Cycle 2</td>
-<td>32 days</td>
-<td>5 days</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Cycle 3</td>
-<td>30 days</td>
-<td>4 days</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Cycle 4</td>
-<td>34 days</td>
-<td>6 days</td>
-<td>✓ Complete</td>
-</tr>
-<tr>
-<td>Cycle 5</td>
-<td>33 days</td>
-<td>5 days</td>
-<td>✓ Complete</td>
-</tr>
+<table class="history" id="historyTable">
+<tr><th>Cycle</th><th>Length</th><th>Period</th><th>Status</th></tr>
+<tr><td colspan="4" style="text-align:center; color:#8a7d88;">Start tracking to see history</td></tr>
 </table>
-</div>
-<div class="grid">
-<div class="card">
-<h3>📆 Cycle Pattern</h3>
-<p>
-Your example history ranges between approximately
-30–34 days.
-</p>
-</div>
-<div class="card">
-<h3>🩸 Period Pattern</h3>
-<p>
-Your example period duration is approximately
-4–6 days.
-</p>
-</div>
-<div class="card">
-<h3>💡 Understanding Your Data</h3>
-<p>
-Statistics become more useful as you record more
-complete cycles.
-</p>
-</div>
 </div>
 </section>
 <!-- ================= NOTIFICATIONS ================= -->
 <section id="notifications" class="page">
 <h1>🔔 Notifications</h1>
-<p class="subtitle">
-Your cycle reminders and tracking reminders.
-</p>
-<div class="card">
+<p class="subtitle">Your reminders.</p>
+<div class="card" id="notifList">
 <div class="notification">
-<h3>🩸 Period Reminder</h3>
-<p>Your estimated period is 10 days away.</p>
-</div>
-<div class="notification">
-<h3>💜 Ovulation Information</h3>
-<p>Your estimated fertile window is approaching.</p>
-</div>
-<div class="notification">
-<h3>📝 Daily Tracking</h3>
-<p>Remember to record today's symptoms and mood.</p>
+<h3>📅 Set up your cycle</h3>
+<p>Add your first period start date to begin tracking.</p>
 </div>
 </div>
 <div class="card">
 <h2>Reminder Settings</h2>
 <br>
-<button class="btn green" onclick="toggleReminder(this)">
-🔔 Period Reminder: ON
-</button>
-<button class="btn purple" onclick="toggleReminder(this)">
-💜 Ovulation Reminder: ON
-</button>
-<button class="btn blue" onclick="toggleReminder(this)">
-📝 Daily Tracking: ON
-</button>
+<button class="btn green" onclick="toggleReminder(this)">🔔 Period Reminder: ON</button>
+<button class="btn purple" onclick="toggleReminder(this)">💜 Ovulation Reminder: ON</button>
+<button class="btn blue" onclick="toggleReminder(this)">📝 Daily Tracking: ON</button>
 </div>
 </section>
 <!-- ================= MINE ================= -->
 <section id="mine" class="page">
 <h1>👤 Mine</h1>
-<p class="subtitle">
-Personalise your cycle tracker.
-</p>
+<p class="subtitle">Personalise your tracker.</p>
 <div class="card profile">
 <div class="avatar">🌸</div>
 <h2 id="profileTitle">My Profile</h2>
 <br>
 <div class="form-group">
 <label>Your Name</label>
-<input
-id="nameInput"
-type="text"
-placeholder="Enter your name"
->
+<input id="nameInput" type="text" placeholder="Enter your name">
 </div>
 <div class="form-group">
-<label>Average Cycle Length</label>
-<input
-id="cycleInput"
-type="number"
-value="32"
->
+<label>Average Cycle Length (days)</label>
+<input id="cycleInput" type="number" value="28" min="21" max="45">
 </div>
 <div class="form-group">
-<label>Average Period Length</label>
-<input
-id="periodInput"
-type="number"
-value="5"
->
+<label>Average Period Length (days)</label>
+<input id="periodInput" type="number" value="5" min="2" max="10">
+</div>
+<div class="form-group">
+<label>First Period Start Date</label>
+<input id="lastPeriodInput" type="date">
 </div>
 <button class="btn primary" onclick="saveProfile()">
 💾 Save Profile
@@ -1260,41 +1013,21 @@ value="5"
 <div class="card">
 <h2>⚙️ Settings</h2>
 <br>
-<button class="btn green" onclick="openNotifications()">
-🔔 Notification Settings
-</button>
-<button class="btn purple" onclick="showPage('stats')">
-📊 View Statistics
-</button>
-<button class="btn blue" onclick="showPrivacy()">
-🔐 Privacy Information
-</button>
-<button class="btn grey" onclick="resetData()">
-Reset Saved Data
-</button>
+<button class="btn green" onclick="openNotifications()">🔔 Notifications</button>
+<button class="btn purple" onclick="showPage('stats')">📊 Statistics</button>
+<button class="btn blue" onclick="showPrivacy()">🔐 Privacy</button>
+<button class="btn grey" onclick="resetData()">🗑️ Reset All Data</button>
 </div>
 </section>
 </div>
-<!-- ================= BOTTOM NAVIGATION ================= -->
+<!-- ================= BOTTOM NAV ================= -->
 <nav class="bottom-nav">
-<button class="nav active" onclick="showPage('today',this)">
-🌸<br>Today
-</button>
-<button class="nav" onclick="showPage('calendar',this)">
-📅<br>Calendar
-</button>
-<button class="nav" onclick="showPage('track',this)">
-➕<br>Track
-</button>
-<button class="nav" onclick="showPage('selfcare',this)">
-💗<br>Self Care
-</button>
-<button class="nav" onclick="showPage('stats',this)">
-📊<br>Stats
-</button>
-<button class="nav" onclick="showPage('mine',this)">
-👤<br>Mine
-</button>
+<button class="nav active" onclick="showPage('today',this)">🌸<br>Today</button>
+<button class="nav" onclick="showPage('calendar',this)">📅<br>Calendar</button>
+<button class="nav" onclick="showPage('track',this)">➕<br>Track</button>
+<button class="nav" onclick="showPage('selfcare',this)">💗<br>Self Care</button>
+<button class="nav" onclick="showPage('stats',this)">📊<br>Stats</button>
+<button class="nav" onclick="showPage('mine',this)">👤<br>Mine</button>
 </nav>
 <!-- ================= MODAL ================= -->
 <div id="modal" class="modal">
@@ -1303,51 +1036,371 @@ Reset Saved Data
 <div id="modalContent"></div>
 </div>
 </div>
+
 <script>
-/* ================= GENERAL NAVIGATION ================= */
-function showPage(id,button){
-document.querySelectorAll(".page").forEach(function(page){
-page.classList.remove("active");
+// ========= GLOBAL STATE =========
+let currentMonth = new Date().getMonth();
+let currentYear = new Date().getFullYear();
+let selectedFlow = null;
+let selectedMood = null;
+let selectedSymptoms = new Set();
+
+// ========= INIT ON LOAD =========
+document.addEventListener('DOMContentLoaded', function(){
+  updateProfile();
+  calculateCycle();
+  buildHistoryTable();
 });
-document.getElementById(id).classList.add("active");
-document.querySelectorAll(".nav").forEach(function(nav){
-nav.classList.remove("active");
-});
-if(button){
-button.classList.add("active");
+
+// ========= NAVIGATION =========
+function showPage(id, button){
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  document.querySelectorAll(".nav").forEach(n => n.classList.remove("active"));
+  if(button) button.classList.add("active");
+  if(id === "calendar") createCalendar();
+  window.scrollTo({top:0, behavior:"smooth"});
 }
-if(id === "calendar"){
-createCalendar();
-}
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-}
-/* ================= PROFILE ================= */
+
+// ========= PROFILE =========
 function saveProfile(){
-let name=document.getElementById("nameInput").value;
-let cycle=document.getElementById("cycleInput").value;
-let period=document.getElementById("periodInput").value;
-localStorage.setItem("bloomName",name);
-localStorage.setItem("bloomCycle",cycle);
-localStorage.setItem("bloomPeriod",period);
-updateProfile();
-alert("✅ Profile saved successfully!");
+  const name = document.getElementById("nameInput").value.trim();
+  const cycle = document.getElementById("cycleInput").value;
+  const periodLen = document.getElementById("periodInput").value;
+  const lastPeriod = document.getElementById("lastPeriodInput").value;
+  
+  if(!lastPeriod){
+    alert("⚠️ Please enter your first period start date.");
+    return;
+  }
+  
+  localStorage.setItem("bloomName", name);
+  localStorage.setItem("bloomCycle", cycle);
+  localStorage.setItem("bloomPeriod", periodLen);
+  localStorage.setItem("bloomLastPeriod", lastPeriod);
+  
+  updateProfile();
+  calculateCycle();
+  createCalendar();
+  buildHistoryTable();
+  alert("✅ Profile saved! Your cycle is being tracked.");
 }
+
 function updateProfile(){
-let name=localStorage.getItem("bloomName");
-let cycle=localStorage.getItem("bloomCycle") || 32;
-let period=localStorage.getItem("bloomPeriod") || 5;
-if(name){
-document.getElementById("welcomeText").innerText=
-"Good Morning, "+name+" 🌸";
-document.getElementById("profileTitle").innerText=
-"Hello, "+name+" 🌸";
-document.getElementById("nameInput").value=name;
+  const name = localStorage.getItem("bloomName");
+  const cycle = localStorage.getItem("bloomCycle") || 28;
+  const periodLen = localStorage.getItem("bloomPeriod") || 5;
+  const lastPeriod = localStorage.getItem("bloomLastPeriod");
+  
+  if(name){
+    document.getElementById("welcomeText").innerText = `Good Morning, ${name} 🌸`;
+    document.getElementById("profileTitle").innerText = `Hello, ${name} 🌸`;
+    document.getElementById("nameInput").value = name;
+  }
+  document.getElementById("cycleInput").value = cycle;
+  document.getElementById("periodInput").value = periodLen;
+  if(lastPeriod) document.getElementById("lastPeriodInput").value = lastPeriod;
+  document.getElementById("cycleLengthDisplay").innerText = `${cycle} days`;
 }
-document.getElementById("cycleInput").value=cycle;
-document.getElementById("periodInput").value=period;
-document.getElementById("cycleLengthDisplay").innerText=
-        cycle+" days";
-        cycle+" days";
+
+// ========= CYCLE CALCULATIONS =========
+function calculateCycle(){
+  const lastPeriod = localStorage.getItem("bloomLastPeriod");
+  if(!lastPeriod) return;
+  
+  const cycleLen = parseInt(localStorage.getItem("bloomCycle")) || 28;
+  const periodLen = parseInt(localStorage.getItem("bloomPeriod")) || 5;
+  
+  const startDate = new Date(lastPeriod);
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  startDate.setHours(0,0,0,0);
+  
+  // Cycle day
+  const dayDiff = Math.floor((today - startDate) / (1000*60*60*24)) + 1;
+  const cycleDay = ((dayDiff - 1) % cycleLen) + 1;
+  
+  // Next period
+  const cyclesPassed = Math.floor((dayDiff - 1) / cycleLen);
+  const nextStart = new Date(startDate);
+  nextStart.setDate(startDate.getDate() + (cyclesPassed + 1) * cycleLen);
+  const daysToPeriod = Math.ceil((nextStart - today) / (1000*60*60*24));
+  
+  // Ovulation & fertility
+  const ovulationDay = cycleLen - 14;
+  const fertileStart = ovulationDay - 5;
+  const fertileEnd = ovulationDay + 2;
+  let daysToOvulation = ovulationDay - cycleDay;
+  if(daysToOvulation < 0) daysToOvulation += cycleLen;
+  
+  // Phase
+  let phase = "";
+  let fertilityStatus = "";
+  if(cycleDay <= periodLen){
+    phase = "Menstrual";
+    fertilityStatus = "🟢 Low chance of pregnancy";
+  } else if(cycleDay < fertileStart){
+    phase = "Follicular";
+    fertilityStatus = "🟡 Approaching fertile window";
+  } else if(cycleDay >= fertileStart && cycleDay <= fertileEnd){
+    phase = "Fertile Window";
+    if(cycleDay === ovulationDay || cycleDay === ovulationDay - 1){
+      fertilityStatus = "🔴 Highest chance — Ovulation near";
+    } else {
+      fertilityStatus = "🟠 High chance of pregnancy";
+    }
+  } else {
+    phase = "Luteal";
+    fertilityStatus = "🟢 Lower chance of pregnancy";
+  }
+  
+  // Update display
+  document.getElementById("cycleDayDisplay").innerText = cycleDay;
+  document.getElementById("periodCountdown").innerText = daysToPeriod;
+  document.getElementById("ovulationCountdown").innerText = daysToOvulation;
+  document.getElementById("nextPeriodSpan").innerText = `${daysToPeriod} days`;
+  document.getElementById("phaseSpan").innerText = phase;
+  document.getElementById("fertilityStatus").innerText = fertilityStatus;
+  document.getElementById("periodInfo").innerHTML = 
+    `Your next period is estimated <b>${daysToPeriod} days</b> away.`;
+  
+  // Stats
+  document.getElementById("statCycle").innerText = cycleLen;
+  document.getElementById("statPeriod").innerText = periodLen;
+  document.getElementById("statDay").innerText = cycleDay;
+  document.getElementById("statTracked").innerText = cyclesPassed + 1;
+  
+  // Notifications
+  updateNotifications(daysToPeriod, daysToOvulation, phase);
+}
+
+// ========= START PERIOD =========
+function startPeriod(){
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById("lastPeriodInput").value = today;
+  localStorage.setItem("bloomLastPeriod", today);
+  calculateCycle();
+  createCalendar();
+  alert("✅ Period start recorded! Cycle Day 1 begins now.");
+}
+
+// ========= CALENDAR =========
+function createCalendar(){
+  const container = document.getElementById("calendarDays");
+  container.innerHTML = "";
+  
+  const lastPeriod = localStorage.getItem("bloomLastPeriod");
+  const cycleLen = parseInt(localStorage.getItem("bloomCycle")) || 28;
+  const periodLen = parseInt(localStorage.getItem("bloomPeriod")) || 5;
+  
+  // Month title
+  const monthNames = ["January","February","March","April","May","June",
+    "July","August","September","October","November","December"];
+  document.getElementById("monthTitle").innerText = 
+    `${monthNames[currentMonth]} ${currentYear}`;
+  
+  const firstDay = new Date(currentYear, currentMonth, 1);
+  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const startDay = firstDay.getDay();
+  const totalDays = lastDay.getDate();
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  
+  // Empty cells
+  for(let i=0; i<startDay; i++){
+    const empty = document.createElement("div");
+    empty.style.minHeight = "60px";
+    container.appendChild(empty);
+  }
+  
+  // Days
+  for(let d=1; d<=totalDays; d++){
+    const date = new Date(currentYear, currentMonth, d);
+    const dayEl = document.createElement("div");
+    dayEl.classList.add("day");
+    dayEl.innerText = d;
+    
+    if(date.toDateString() === today.toDateString()){
+      dayEl.classList.add("today");
+    }
+    
+    if(lastPeriod){
+      const startDate = new Date(lastPeriod);
+      startDate.setHours(0,0,0,0);
+      const daySinceStart = Math.floor((date - startDate) / (1000*60*60*24));
+      
+      if(daySinceStart >= 0){
+        const cDay = (daySinceStart % cycleLen) + 1;
+        const ovDay = cycleLen - 14;
+        const fertStart = ovDay - 5;
+        const fertEnd = ovDay + 2;
+        
+        if(cDay <= periodLen){
+          dayEl.classList.add("period");
+        } else if(cDay >= fertStart && cDay <= fertEnd){
+          dayEl.classList.add("fertile");
+        } else if(cDay > cycleLen - 3){
+          dayEl.classList.add("predicted");
+        }
+      }
+    }
+    
+    dayEl.onclick = () => showDayDetail(date);
+    container.appendChild(dayEl);
+  }
+}
+
+function changeMonth(delta){
+  currentMonth += delta;
+  if(currentMonth < 0){
+    currentMonth = 11;
+    currentYear--;
+  } else if(currentMonth > 11){
+    currentMonth = 0;
+    currentYear++;
+  }
+  createCalendar();
+}
+
+function showDayDetail(date){
+  const detail = document.getElementById("dateDetail");
+  detail.classList.add("show");
+  detail.innerHTML = `<h4>${date.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long'})}</h4>
+    <p style="margin-top:10px;">Click a day to view details. Tracking data appears here.</p>`;
+}
+
+// ========= TRACKING =========
+function selectChoice(el, type){
+  const container = el.parentElement;
+  container.querySelectorAll(".choice").forEach(c => c.classList.remove("selected"));
+  el.classList.add("selected");
+  if(type === "flow") selectedFlow = el.innerText;
+  if(type === "mood") selectedMood = el.innerText;
+}
+
+function toggleChoice(el){
+  el.classList.toggle("selected");
+  const name = el.innerText.trim();
+  if(el.classList.contains("selected")) selectedSymptoms.add(name);
+  else selectedSymptoms.delete(name);
+}
+
+function saveTracking(){
+  const today = new Date().toISOString().split('T')[0];
+  const record = {
+    date: today,
+    flow: selectedFlow || "None",
+    mood: selectedMood || "Not recorded",
+    symptoms: Array.from(selectedSymptoms),
+    discharge: document.getElementById("discharge").value,
+    note: document.getElementById("dailyNote").value
+  };
+  
+  let allRecords = JSON.parse(localStorage.getItem("bloomRecords") || "{}");
+  allRecords[today] = record;
+  localStorage.setItem("bloomRecords", JSON.stringify(allRecords));
+  
+  document.getElementById("todayRecord").innerHTML = 
+    `<b>✅ Saved!</b><br>Flow: ${record.flow}<br>Mood: ${record.mood}`;
+  
+  alert("✅ Today's record saved!");
+}
+
+function clearTracking(){
+  selectedFlow = null;
+  selectedMood = null;
+  selectedSymptoms.clear();
+  document.querySelectorAll(".choice").forEach(c => c.classList.remove("selected"));
+  document.getElementById("discharge").value = "None";
+  document.getElementById("dailyNote").value = "";
+}
+
+// ========= ARTICLES =========
+function openArticle(id){
+  const content = document.getElementById(id);
+  content.classList.toggle("show");
+}
+
+// ========= NOTIFICATIONS =========
+function updateNotifications(daysToPeriod, daysToOvulation, phase){
+  const list = document.getElementById("notifList");
+  list.innerHTML = `
+    <div class="notification">
+      <h3>🩸 Period Coming</h3>
+      <p>Your next period: ${daysToPeriod} days away</p>
+    </div>
+    <div class="notification">
+      <h3>💜 Ovulation Update</h3>
+      <p>Ovulation estimated in ${daysToOvulation} days</p>
+    </div>
+    <div class="notification">
+      <h3>🌙 Current Phase</h3>
+      <p>You are in the ${phase} phase</p>
+    </div>
+    <div class="notification">
+      <h3>📝 Daily Reminder</h3>
+      <p>Don't forget to log today's feelings & symptoms</p>
+    </div>
+  `;
+}
+
+function openNotifications(){
+  showPage('notifications');
+}
+
+function toggleReminder(btn){
+  btn.classList.toggle("off");
+  btn.style.opacity = btn.classList.contains("off") ? "0.6" : "1";
+}
+
+// ========= HISTORY =========
+function buildHistoryTable(){
+  const lastPeriod = localStorage.getItem("bloomLastPeriod");
+  if(!lastPeriod) return;
+  
+  const cycleLen = parseInt(localStorage.getItem("bloomCycle")) || 28;
+  const periodLen = parseInt(localStorage.getItem("bloomPeriod")) || 5;
+  const startDate = new Date(lastPeriod);
+  const today = new Date();
+  const daysPassed = Math.floor((today - startDate) / (1000*60*60*24));
+  const completed = Math.floor(daysPassed / cycleLen);
+  
+  const table = document.getElementById("historyTable");
+  let rows = `<tr><th>Cycle</th><th>Length</th><th>Period</th><th>Status</th></tr>`;
+  
+  for(let i=0; i<Math.min(completed+1,6); i++){
+    const s = new Date(startDate);
+    s.setDate(startDate.getDate() + i * cycleLen);
+    const status = i < completed ? "✓ Complete" : "🔄 In Progress";
+    rows += `<tr>
+      <td>Cycle ${i+1}</td>
+      <td>${cycleLen} days</td>
+      <td>${periodLen} days</td>
+      <td>${status}</td>
+    </tr>`;
+  }
+  table.innerHTML = rows;
+}
+
+// ========= MISC =========
+function editPeriod(){
+  showPage('mine');
+}
+function addCalendarNote(){
+  showPage('track');
+}
+function showPrivacy(){
+  alert("🔐 Privacy: Your data stays in your browser — nothing is sent to servers. Clear it anytime in Settings.");
+}
+function resetData(){
+  if(confirm("⚠️ Erase ALL saved data? Cannot undo!")){
+    localStorage.clear();
+    location.reload();
+  }
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("show");
+}
+</script>
+</body>
+</html>
